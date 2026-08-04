@@ -11,9 +11,10 @@ const techStack = [
   { name: "TypeScript", src: "/tech/typescript.svg" },
   { name: "Node.js", src: "/tech/nodejs.svg" },
   { name: "JavaScript", src: "/tech/javascript.svg" },
-  { name: "Firebase", src: "/tech/firebase.svg" },
-  { name: "MongoDB", src: "/tech/mongodb.svg" },
-  { name: "Python", src: "/tech/phyton.svg" },
+  { name: "Premiere Pro", src: "/tech/premiere.svg" },
+  { name: "After Effects", src: "/tech/after_effects.svg" },
+  { name: "Photoshop", src: "/tech/photoshop.svg" },
+  { name: "Python", src: "/tech/python.svg" },
 ];
 
 const StackLoop = () => {

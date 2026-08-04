@@ -15,8 +15,8 @@ export const projects = [
     img: "cinepeak.png",
     img2: "cinepeak2.png",
     img3: "cinepeak3.png",
-    link: "https://github.com/Heisenburgerfrr",
-    git: "https://github.com/Heisenburgerfrr",
+    link: "https://cinepeak.qzz.io",
+    git: "https://github.com/Heisenburgerfrr/Cinepeak",
     problem:
       "Accessing live sports streams and movie metadata across third-party sources is often fragmented, slow, and prone to heavy bot traffic or broken links.",
     solution:
@@ -31,8 +31,8 @@ export const projects = [
     img: "longly.png",
     img2: "longly2.png",
     img3: "longly3.png",
-    link: "https://github.com/Heisenburgerfrr",
-    git: "https://github.com/Heisenburgerfrr",
+    link: "https://longly.cc.cd",
+    git: "https://github.com/Heisenburgerfrr/longly",
     problem:
       "Standard URL shorteners obscure link destinations and make shared URLs uniform and unmemorable.",
     solution:

@@ -4,7 +4,6 @@ import React, { useRef, useState, useCallback, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, X } from "lucide-react";
-import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
 import Image from "next/image";
 
@@ -97,32 +96,42 @@ export function ProjectPageContent({ project }: { project: Project }) {
               asChild
               className="!py-4 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl"
             >
-              <Link
+              <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={project.link}
+                href={
+                  project.link.startsWith("http://") ||
+                  project.link.startsWith("https://")
+                    ? project.link
+                    : `https://${project.link}`
+                }
               >
                 <div className="flex items-center justify-center gap-2">
                   <span>View Project</span>
                   <ExternalLink className="size-5" />
                 </div>
-              </Link>
+              </a>
             </Button>
 
             <Button
               asChild
               className="!py-4 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl"
             >
-              <Link
+              <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={project.git}
+                href={
+                  project.git.startsWith("http://") ||
+                  project.git.startsWith("https://")
+                    ? project.git
+                    : `https://${project.git}`
+                }
               >
                 <div className="flex items-center justify-center gap-2">
                   <span>GitHub Repository</span>
                   <FiGithub className="size-5" />
                 </div>
-              </Link>
+              </a>
             </Button>
           </div>
 

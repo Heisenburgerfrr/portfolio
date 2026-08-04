@@ -24,14 +24,14 @@ export async function generateMetadata({
   }
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://myportfoliome.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://rone.eu.cc";
   const projectImage = `${baseUrl}/img/${project.img || "profile-pic.jpg"}`;
 
   return {
-    title: `${project.name} | Adebanjo Stephen`,
+    title: `${project.name} | Rone`,
     description: project.desc,
     openGraph: {
-      title: `${project.name} | Adebanjo Stephen`,
+      title: `${project.name} | Rone`,
       description: project.desc,
       type: "article",
       url: `${baseUrl}/project/${project.slug}`,
@@ -46,7 +46,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.name} | Adebanjo Stephen`,
+      title: `${project.name} | Rone`,
       description: project.desc,
       images: [projectImage],
     },

@@ -58,18 +58,18 @@ export function ProjectPageContent({ project }: { project: Project }) {
           transition={{ duration: 0.85, ease: "easeOut" }}
         >
           <div>
-            <h2 className="font-semibold text-[32px] sm:text-[38px] md:text-[45px]">
+            <h1 className="font-semibold text-[32px] sm:text-[38px] md:text-[45px]">
               {project.name}
-            </h2>
+            </h1>
             <p className="flex-grow text-gray-600 text-[16px] sm:text-[18px] md:text-[19px] mt-0">
               {project.show}
             </p>
           </div>
 
           <div className="mt-8 rounded-xl border p-4 sm:p-6 md:p-4 bg-[#FAFAFA]">
-            <span className="font-bold text-[16px] sm:text-[17px] md:text-[18px]">
+            <h2 className="font-bold text-[16px] sm:text-[17px] md:text-[18px]">
               Description
-            </span>
+            </h2>
             <p className="text-base text-wrap prose font-light text-gray-700 mt-2 flex-grow">
               {project.desc}
             </p>
@@ -77,9 +77,9 @@ export function ProjectPageContent({ project }: { project: Project }) {
             <hr className="mt-8 mb-8" />
 
             <div>
-              <span className="font-bold text-[16px] sm:text-[17px] md:text-[18px]">
+              <h2 className="font-bold text-[16px] sm:text-[17px] md:text-[18px]">
                 Technologies
-              </span>
+              </h2>
               <ul className="flex flex-wrap gap-2 mt-3 ">
                 {project.lang.map((tech) => (
                   <li key={tech}>
@@ -93,17 +93,31 @@ export function ProjectPageContent({ project }: { project: Project }) {
           </div>
 
           <div className="py-2 flex justify-between gap-3 mt-8">
-            <Link target="_blank" href={project.link}>
-              <Button className="!py-6 mt-3 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer">
+            <Button
+              asChild
+              className="!py-6 mt-3 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer"
+            >
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.link}
+              >
                 View Project <ExternalLink />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
 
-            <Link target="_blank" href={project.git}>
-              <Button className="!py-6 hover:!bg-black/82 mt-3 !bg-black/90 text-white !cursor-pointer">
+            <Button
+              asChild
+              className="!py-6 hover:!bg-black/82 mt-3 !bg-black/90 text-white !cursor-pointer"
+            >
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.git}
+              >
                 Github <FiGithub />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
 
           <div className="mt-12">
@@ -132,9 +146,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                   <div
                     role="button"
                     tabIndex={0}
-                    onClick={() =>
-                      setLightboxSrc(`/img/${project.img2}`)
-                    }
+                    onClick={() => setLightboxSrc(`/img/${project.img2}`)}
                     onKeyDown={(e) =>
                       e.key === "Enter" &&
                       setLightboxSrc(`/img/${project.img2}`)
@@ -144,7 +156,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                   >
                     <Image
                       src={`/img/${project.img2}`}
-                      alt={`Screenshot of ${project.name} project`}
+                      alt={`Screenshot 2 of ${project.name} project`}
                       width={400}
                       height={400}
                       className="rounded-2xl w-full h-auto shadow-md"
@@ -155,9 +167,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                   <div
                     role="button"
                     tabIndex={0}
-                    onClick={() =>
-                      setLightboxSrc(`/img/${project.img3}`)
-                    }
+                    onClick={() => setLightboxSrc(`/img/${project.img3}`)}
                     onKeyDown={(e) =>
                       e.key === "Enter" &&
                       setLightboxSrc(`/img/${project.img3}`)
@@ -167,7 +177,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                   >
                     <Image
                       src={`/img/${project.img3}`}
-                      alt={`Screenshot of ${project.name} project`}
+                      alt={`Screenshot 3 of ${project.name} project`}
                       width={400}
                       height={400}
                       className="rounded-2xl w-full h-auto shadow-md"
@@ -196,7 +206,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                   type="button"
                   onClick={closeLightbox}
                   className="absolute top-4 right-4 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-white"
-                  aria-label="Close"
+                  aria-label="Close image preview"
                 >
                   <X className="size-5" />
                 </button>
@@ -210,7 +220,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                 >
                   <Image
                     src={lightboxSrc}
-                    alt={`Screenshot of ${project.name} project`}
+                    alt={`Enlarged screenshot of ${project.name}`}
                     width={1200}
                     height={1200}
                     className="rounded-xl max-h-[90vh] w-auto h-auto object-contain shadow-2xl"

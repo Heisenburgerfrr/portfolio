@@ -23,7 +23,8 @@ export async function generateMetadata({
     };
   }
 
-  const baseUrl = "https://myportfoliome.vercel.app";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://myportfoliome.vercel.app";
   const projectImage = `${baseUrl}/img/${project.img || "profile-pic.jpg"}`;
 
   return {

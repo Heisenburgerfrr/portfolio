@@ -15,31 +15,36 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch("/api/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    setLoading(false);
+      setLoading(false);
 
-    if (res.ok) {
-      toast.success("Message sent!. Thank you for reaching out.");
-      setForm({ name: "", email: "", message: "" });
-    } else {
-      toast.error("Something went wrong. Please try again.");
+      if (res.ok) {
+        toast.success("Message sent! Thank you for reaching out.");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      setLoading(false);
+      toast.error("Failed to send message. Please check your connection.");
     }
   }
 
   return (
-    <div id="contact" ref={ref} className="px-4 sm:px-8 md:px-14 mt-30">
+    <section id="contact" ref={ref} className="px-4 sm:px-8 md:px-14 mt-30">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="grid text-wrap"
       >
-        <h1 className="text-black font-bold text-3xl">Get in touch</h1>
+        <h2 className="text-black font-bold text-3xl">Get in touch</h2>
 
         <p className="prose mt-2 text-gray-600">
           Whether it&apos;s a freelance gig, a collaboration, or a full-time
@@ -56,35 +61,39 @@ const Contact = () => {
         className="py-2"
       >
         <div className="mt-8">
-          <form onSubmit={handleSubmit} className="">
+          <form onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
               <input
                 type="text"
                 id="name"
                 placeholder="Full Name"
+                aria-label="Full Name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full sm:w-auto border py-4 px-6 rounded-xl bg-[#F2F2F2] focus:outline-black"
+                className="w-full sm:w-auto border py-4 px-6 rounded-xl bg-[#F2F2F2] focus:outline-black flex-1"
                 required
               />
               <input
                 type="email"
                 id="email"
                 placeholder="Email Address"
+                aria-label="Email Address"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full sm:w-auto border py-4 px-8 rounded-xl bg-[#F2F2F2] focus:outline-black"
+                className="w-full sm:w-auto border py-4 px-8 rounded-xl bg-[#F2F2F2] focus:outline-black flex-1"
                 required
               />
             </div>
 
             <div className="mt-2">
               <textarea
-                placeholder="Hi, Stephen are you up for this role:"
+                placeholder="Hi Stephen, are you available for..."
+                aria-label="Your Message"
                 id="message"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className="inline-flex w-full resize-none h-40 px-4 py-3 bg-[#F2F2F2] rounded-xl focus:outline-black mt-2 border"
+                required
               ></textarea>
             </div>
 
@@ -94,13 +103,13 @@ const Contact = () => {
                 type="submit"
                 disabled={loading}
               >
-                {loading ? "Sending.." : "Send Message"}
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </div>
           </form>
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

@@ -6,49 +6,53 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="px-12 pb-20">
+    <footer className="px-12 pb-20">
       <hr className="mt-23" />
 
       <div className="mt-6 text-center">
         <span className="text-gray-600 text-[16px] tracking-normal">
-          Copyright@2025AdebanjoStephen
+          © 2025 Adebanjo Stephen. All rights reserved.
         </span>
 
         <div className="flex items-center justify-center gap-6 mt-2">
           <a
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
             href="https://x.com/AdebanjoSt63916"
+            aria-label="X (Twitter) profile"
           >
             <FaXTwitter className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
           </a>
 
           <a
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             href="https://github.com/SteeveSticks"
+            aria-label="GitHub profile"
           >
-            <FiGithub className="size-5 text-gray-70 hover:text-gray-600 cursor-pointer" />
+            <FiGithub className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
           </a>
 
           <a
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             href="https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/"
+            aria-label="LinkedIn profile"
           >
             <FaLinkedin className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
           </a>
 
           <a
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
             href="mailto:stephenadebanjo86@gmail.com"
+            aria-label="Send email"
           >
             <Mail className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

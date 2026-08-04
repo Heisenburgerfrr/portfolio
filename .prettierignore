@@ -1,0 +1,7 @@
+.next
+node_modules
+public
+dist
+build
+pnpm-lock.yaml
+package-lock.json

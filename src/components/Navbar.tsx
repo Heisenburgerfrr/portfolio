@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
@@ -28,25 +29,31 @@ const Navbar = () => {
     <header className="py-4">
       <nav className="max-w-[586px] mx-auto bg-black/85 flex flex-wrap justify-between items-center py-2 px-4 rounded-full border outline-none shadow-md fixed left-0 right-0 z-50">
         <div>
-          <Link href="/">
-            <img src="/img/brandLogo.png" alt="Brand Logo" />
+          <Link href="/" aria-label="Home page">
+            <Image
+              src="/img/brandLogo.png"
+              alt="Adebanjo Stephen Brand Logo"
+              width={32}
+              height={32}
+              className="w-auto h-auto"
+            />
           </Link>
         </div>
 
-        <div className="">
+        <div>
           <ul className="flex-center flex-wrap">
-            <li className="">
-              <Button variant="link">
-                <Link href="/#">Home</Link>
+            <li>
+              <Button variant="link" asChild>
+                <Link href="/">Home</Link>
               </Button>
             </li>
             <li className="sm:block hidden">
-              <Button variant="link">
+              <Button variant="link" asChild>
                 <Link href="/#projects">Projects</Link>
               </Button>
             </li>
             <li className="sm:block hidden">
-              <Button variant="link">
+              <Button variant="link" asChild>
                 <Link href="/#experience">Experience</Link>
               </Button>
             </li>
@@ -55,19 +62,21 @@ const Navbar = () => {
 
         <div className="flex-between gap-2 flex-wrap">
           <Tooltip>
-            <TooltipTrigger>
+            <TooltipTrigger asChild>
               <Link
                 target="_blank"
                 rel="noreferrer"
                 href="https://github.com/SteeveSticks"
+                aria-label="GitHub Profile"
               >
                 <FiGithub className="size-6 text-white hover:text-white/90 cursor-pointer mr-2" />
               </Link>
             </TooltipTrigger>
             <TooltipContent>GitHub</TooltipContent>
           </Tooltip>
+
           <Tooltip>
-            <TooltipTrigger>
+            <TooltipTrigger asChild>
               <button
                 type="button"
                 onClick={handleResumeClick}
@@ -77,12 +86,11 @@ const Navbar = () => {
                 <IoDocumentTextOutline className="size-6" />
               </button>
             </TooltipTrigger>
-            <ul className="flex-between flex-wrap"></ul>
             <TooltipContent>Resume</TooltipContent>
           </Tooltip>
 
           <div className="border-l">
-            <Button className="ml-2">
+            <Button asChild className="ml-2">
               <Link href="/#contact">Contact</Link>
             </Button>
           </div>

@@ -7,12 +7,12 @@ const techStack = [
   { name: "React", src: "/tech/react.svg" },
   { name: "Next.js", src: "/tech/nextjs.svg" },
   { name: "Tailwind", src: "/tech/tailwind.svg" },
-  { name: "Typescript", src: "/tech/typescript.svg" },
-  { name: "Nodejs", src: "/tech/nodejs.svg" },
-  { name: "Javascript ", src: "/tech/javascript.svg" },
+  { name: "TypeScript", src: "/tech/typescript.svg" },
+  { name: "Node.js", src: "/tech/nodejs.svg" },
+  { name: "JavaScript", src: "/tech/javascript.svg" },
   { name: "Firebase", src: "/tech/firebase.svg" },
-  { name: "Mongodb", src: "/tech/mongodb.svg" },
-  { name: "phyton", src: "/tech/phyton.svg" },
+  { name: "MongoDB", src: "/tech/mongodb.svg" },
+  { name: "Python", src: "/tech/phyton.svg" },
 ];
 
 const StackLoop = () => {
@@ -20,11 +20,11 @@ const StackLoop = () => {
     <div className="rounded-xs overflow-hidden py-1 md:max-w-[400px] max-w-[320px] mx-auto ">
       <Marquee delay={5} speed={30}>
         <div className="flex-center gap-3 mx-3">
-          {techStack.map((tech, index) => (
-            <div key={index} className="">
+          {techStack.map((tech) => (
+            <div key={tech.name}>
               <Image
                 src={tech.src}
-                alt={tech.name}
+                alt={`${tech.name} logo`}
                 width={40}
                 height={40}
                 className="object-contain"

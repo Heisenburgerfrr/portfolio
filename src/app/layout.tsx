@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,11 +12,14 @@ const geistSans = Geist({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://myportfoliome.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://myportfoliome.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: "Adebanjo Stephen | Software Engineer",
   description:
-    "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, Full-stack development with Next.js, JavaScript, and TypeScript. As the founder of StartupFounder, a platform connecting developers and showcasing startups, I'm is dedicated to fostering innovation and community within the tech industry.",
+    "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, and Full-stack development with Next.js, JavaScript, and TypeScript.",
   keywords: [
     "Self-taught",
     "Software Engineer",
@@ -44,14 +47,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://myportfoliome.vercel.app",
+    url: siteUrl,
     siteName: "Adebanjo Stephen Portfolio",
     title: "Adebanjo Stephen | Software Engineer",
     description:
-      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, Full-stack development with Next.js, JavaScript, and TypeScript. As the founder of StartupFounder, a platform connecting developers and showcasing startups, I'm is dedicated to fostering innovation and community within the tech industry.",
+      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, and Full-stack development with Next.js, JavaScript, and TypeScript.",
     images: [
       {
-        url: "https://myportfoliome.vercel.app/img/profile-pic.jpg",
+        url: `${siteUrl}/img/profile-pic.jpg`,
         width: 1200,
         height: 630,
         alt: "Adebanjo Stephen | Software Engineer",
@@ -62,9 +65,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Adebanjo Stephen | Software Engineer",
     description:
-      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, Full-stack development with Next.js, JavaScript, and TypeScript.",
+      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, and Full-stack development with Next.js, JavaScript, and TypeScript.",
     creator: "@AdebanjoSt63916",
-    images: ["https://myportfoliome.vercel.app/img/profile-pic.jpg"],
+    images: [`${siteUrl}/img/profile-pic.jpg`],
   },
   robots: {
     index: true,
@@ -77,9 +80,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google -verification-code",
-  },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -88,64 +88,42 @@ export const metadata: Metadata = {
   },
 };
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Adebanjo Stephen",
-      url: "https://myportfoliome.vercel.app",
-      image: "https://myportfoliome.vercel.app/img/profile-pic.jpg",
-      email: "mailto:contact@myportfoliome.vercel.app",
-      sameAs: [
-        "https://github.com/SteeveSticks",
-        "https://x.com/AdebanjoSt63916",
-      ],
-      jobTitle: "Software Engineer",
-      worksFor: {
-        "@type": "Organization",
-        name: "StartupFounder",
-      },
-    }),
-  }}
-/>;
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Adebanjo Stephen",
+    url: siteUrl,
+    image: `${siteUrl}/img/profile-pic.jpg`,
+    jobTitle: "Software Engineer",
+    sameAs: [
+      "https://github.com/SteeveSticks",
+      "https://x.com/AdebanjoSt63916",
+      "https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/",
+    ],
+  };
+
   return (
     <html lang="en">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Adebanjo Stephen",
-              url: "https://myportfoliome.vercel.app",
-              logo: "https://myportfoliome.vercel.app/img/profile-pic.jpg",
-              description:
-                "Software Engineer specializing in Frontend, Backend, and Full-stack development",
-              sameAs: [
-                "https://github.com/SteeveSticks",
-                "https://x.com/AdebanjoSt63916",
-                "https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/"
-              ],
-            }),
+            __html: JSON.stringify(personJsonLd),
           }}
         />
       </head>
       <body className={`${geistSans.variable} antialiased`}>
-        <main className="font-sans border-b border-l border-r max-w-3xl mx-auto">
+        <div className="font-sans border-b border-l border-r max-w-3xl mx-auto">
           <Navbar />
           {children}
           <Footer />
-          <Analytics/>
-        </main>
+          <Analytics />
+        </div>
         <Toaster />
       </body>
     </html>

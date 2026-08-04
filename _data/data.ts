@@ -73,7 +73,7 @@ export const projects = [
   },
   {
     name: "Notion App Clone",
-    slug: "Notion",
+    slug: "notion-clone",
     show: "Implemented real-time collaboration, user typing indicators, OpenAI-like cloudflare language, and OpenAI chat integration, worked with Liveblocks and Firebase",
     desc: "A collaborative document editing app similar to Notion, featuring real-time user presence, typing indicators, and AI-powered chat functionality using cloudflare language and OpenAI integration.",
     lang: [

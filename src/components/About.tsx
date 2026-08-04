@@ -17,27 +17,28 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className=""
         >
-          <div className="font-bold text-3xl text-black/90">About</div>
+          <h2 className="font-bold text-3xl text-black/90 mb-4">About</h2>
           <p>
-            I&apos;m Adebanjo Stephen, a passionate self-taught
-            Nigerian software engineer and an aspiring AI & Machine Language
-            Expert with over 2yr +2 months of experience and a strong drive for
-            building impactful web experiences.
+            I&apos;m Adebanjo Stephen, a passionate self-taught Nigerian
+            software engineer and an aspiring AI & Machine Language Expert with
+            over 2yr +2 months of experience and a strong drive for building
+            impactful web experiences.
           </p>
           <p className="mt-2">
-            I’ve built and shipped real-world AI products and I’m just getting started. I love solving
-            real problems through tech, learning fast, and creating beautiful,
-            high-performing user interfaces.
+            I’ve built and shipped real-world AI products and I’m just getting
+            started. I love solving real problems through tech, learning fast,
+            and creating beautiful, high-performing user interfaces.
           </p>
           <p className="mt-2">
             I’m currently working with{" "}
             <Link
               href="https://www.linkedin.com/company/externhq/posts/?feedView=all"
-              className="hover:text-green-900"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-900 font-semibold"
             >
-              <strong>Extern</strong>
+              Extern
             </Link>{" "}
             on advanced full-stack projects, diving deeper into AI, and actively
             preparing to land a role at a world-class company like{" "}
@@ -49,17 +50,33 @@ const About = () => {
             over <strong>200+ followers on X, </strong>
             I’ve learned and connected with top minds, mentors in the indie
             hacker and maker space — including people like{" "}
-            <Link href="https://x.com/marc_louvion">
+            <Link
+              href="https://x.com/marc_louvion"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <strong>@Marc Lou,</strong>
             </Link>{" "}
-            <Link href="https://x.com/johnrushx">
+            <Link
+              href="https://x.com/johnrushx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <strong>@johnrushx,</strong>
             </Link>{" "}
-            <Link href="https://x.com/tdinh_me">
+            <Link
+              href="https://x.com/tdinh_me"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <strong>@tdinh_me,</strong>
             </Link>{" "}
             and{" "}
-            <Link href="https://x.com/levelsio">
+            <Link
+              href="https://x.com/levelsio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <strong>@levelsio.</strong>
             </Link>{" "}
             Their guidance and content have helped shape how I think about
@@ -71,6 +88,7 @@ const About = () => {
       <Link
         href="https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,10 +106,10 @@ const About = () => {
               src="/img/profile-pic.jpg"
               width={200}
               height={200}
-              alt="profile image"
+              alt="Adebanjo Stephen profile headshot"
               className="rounded-sm bg-white w-full max-w-[200px]"
             />
-            <span className="text-sm block text-center mt-1 text-gray-800">
+            <span className="text-sm block text-center mt-1 text-gray-800 font-medium">
               @midecode
             </span>
           </motion.div>
@@ -104,7 +122,10 @@ const About = () => {
         transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
         className="flex justify-center mt-6 px-4"
       >
-        <Button className="!bg-black/90 text-white !cursor-pointer !py-4 !px-6 hover:!bg-black/82">
+        <Button
+          asChild
+          className="!bg-black/90 text-white !cursor-pointer !py-4 !px-6 hover:!bg-black/82"
+        >
           <a href="#contact" aria-label="Contact for collaboration">
             Let&apos;s collaborate!
           </a>

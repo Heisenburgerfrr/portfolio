@@ -1,15 +1,15 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Projects | Adebanjo Stephen',
+  title: "Projects | Adebanjo Stephen",
   description:
-    'Explore my portfolio of completed projects built with Next.js, React, TypeScript, and modern web technologies. From AI-powered applications to collaborative tools.',
+    "Explore my portfolio of completed projects built with Next.js, React, TypeScript, and modern web technologies. From AI-powered applications to collaborative tools.",
   openGraph: {
-    title: 'Projects | Adebanjo Stephen',
+    title: "Projects | Adebanjo Stephen",
     description:
-      'Explore my portfolio of completed projects built with Next.js, React, TypeScript, and modern web technologies.',
-    type: 'website',
-    url: 'https://myportfoliome.vercel.app/projects',
+      "Explore my portfolio of completed projects built with Next.js, React, TypeScript, and modern web technologies.",
+    type: "website",
+    url: "https://myportfoliome.vercel.app/projects",
   },
 };
 

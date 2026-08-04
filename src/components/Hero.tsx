@@ -46,10 +46,10 @@ const Hero = () => {
               Student &amp; Indie Developer
             </span>
           </h1>
-          <p className="text-gray-600 mt-4 px-2 sm:px-0 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
-            A student building independent web &amp; software projects — mostly
-            self-taught, learning by shipping.
-          </p>
+          <div className="text-gray-600 mt-4 px-2 sm:px-0 text-base sm:text-lg leading-relaxed max-w-xl mx-auto space-y-1">
+            <p>A student building independent web &amp; software projects.</p>
+            <p>Self-taught, making stuff because why not.</p>
+          </div>
         </motion.div>
 
         <motion.div

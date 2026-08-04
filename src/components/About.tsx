@@ -25,19 +25,28 @@ const About = () => {
             About
           </h2>
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-            I&apos;m Rone Reji, a student and indie developer passionate about
-            building independent web and software applications.
+            I&apos;m Rone Reji, aka heisenburgerfrr. I&apos;m a student who&apos;s
+            really into technology, and I love building websites and software just
+            for fun, alongside making content online.
           </p>
           <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
-            My work spans streaming aggregators, automation tools, and
-            short-form content pipelines. I&apos;m mostly self-taught, believing
-            that the best way to master software development is by shipping
-            projects to production.
+            Some of my work includes a Netflix-style movie streaming site, a
+            bunch of short-form content pages, some automation projects, and
+            honestly a lot of random useless stuff too. I&apos;m mostly
+            self-taught. I believe trying things out and breaking them is the
+            best way to actually learn.
           </p>
           <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
-            Whether it&apos;s crafting custom algorithms, designing bot-blocking
-            middleware, or experimenting with novel web tools, I&apos;m always
-            building. Online, I also go by the handles{" "}
+            I&apos;m a logical person and I&apos;m into maths and physics. I
+            also run multiple faceless content channels, and I edit all my own
+            videos in Premiere Pro and After Effects, with Photoshop for
+            thumbnails and graphics. I like exploring pretty much everything,
+            including open source software. I&apos;m into FOSS and I mess
+            around with custom ROMs on the side. When I&apos;m not building
+            stuff, I&apos;m probably playing CS2, GTA 5, RDR 2, or EA FC 26.
+          </p>
+          <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+            Online I go by{" "}
             <Link
               href="https://github.com/Heisenburgerfrr"
               target="_blank"
@@ -45,10 +54,8 @@ const About = () => {
               className="font-medium text-gray-900 underline hover:text-black"
             >
               heisenburgerfrr
-            </Link>
-            , <span className="font-medium text-gray-900">rshellr</span>, and{" "}
-            <span className="font-medium text-gray-900">quavity</span> across
-            developer networks and social platforms.
+            </Link>{" "}
+            and <span className="font-medium text-gray-900">rshellr</span>.
           </p>
           <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
             You can check out my latest code on{" "}

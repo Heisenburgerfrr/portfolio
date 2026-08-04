@@ -123,10 +123,12 @@ const Timeline = () => {
                   Indie Developer Philosophy
                 </h4>
                 <p className="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">
-                  I learn by shipping independent web applications, exploring
-                  algorithm design, and building automated software pipelines.
-                  Always building, experimenting, and refining solutions in the
-                  open.
+                  I learn by breaking things first and figuring them out after.
+                  Building a streaming platform from scratch, automating a
+                  content pipeline, messing with a custom ROM just to see what
+                  happens — I&apos;d rather dive in than read the docs. No
+                  roadmap, no big plan, just curiosity and a lot of trial and
+                  error, shipped in the open.
                 </p>
               </div>
             </div>

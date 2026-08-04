@@ -12,7 +12,7 @@ const Footer = () => {
 
       <div className="mt-6 text-center">
         <span className="text-gray-500 text-xs sm:text-sm tracking-normal">
-          © 2025 Rone. All rights reserved.
+          © 2025 Rone Reji. All rights reserved.
         </span>
 
         <div className="flex items-center justify-center gap-5 sm:gap-6 mt-3">
@@ -20,7 +20,8 @@ const Footer = () => {
             rel="noopener noreferrer"
             target="_blank"
             href="https://x.com/RoneReji"
-            aria-label="X profile"
+            aria-label="Rone Reji X profile (@RoneReji)"
+            title="Rone Reji X profile (@RoneReji)"
             className="text-gray-600 hover:text-black transition-colors"
           >
             <FaXTwitter className="size-4 sm:size-5" />
@@ -30,7 +31,8 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/Heisenburgerfrr"
-            aria-label="GitHub profile"
+            aria-label="Rone Reji GitHub profile (@Heisenburgerfrr)"
+            title="Rone Reji GitHub profile (@Heisenburgerfrr)"
             className="text-gray-600 hover:text-black transition-colors"
           >
             <FiGithub className="size-4 sm:size-5" />
@@ -40,7 +42,8 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.instagram.com/heisenburgerfrr/"
-            aria-label="Instagram profile"
+            aria-label="Rone Reji Instagram profile (@heisenburgerfrr)"
+            title="Rone Reji Instagram profile (@heisenburgerfrr)"
             className="text-gray-600 hover:text-black transition-colors"
           >
             <FaInstagram className="size-4 sm:size-5" />
@@ -50,7 +53,8 @@ const Footer = () => {
             rel="noopener noreferrer"
             target="_blank"
             href={`mailto:${contactEmail}`}
-            aria-label="Send email"
+            aria-label="Send email to Rone Reji"
+            title="Send email to Rone Reji"
             className="text-gray-600 hover:text-black transition-colors"
           >
             <Mail className="size-4 sm:size-5" />

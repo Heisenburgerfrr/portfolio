@@ -12,15 +12,19 @@ const geistSans = Geist({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rone.eu.cc";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Rone | Student & Indie Developer",
+  title: "Rone Reji | Student & Indie Developer",
   description:
-    "A student building independent web and software projects — streaming aggregators, automation tools, and short-form content pipelines — mostly self-taught, learning by shipping.",
+    "Rone Reji is a student & indie developer building independent web and software projects — streaming aggregators, automation tools, and content pipelines.",
   keywords: [
     "Rone",
+    "Rone Reji",
+    "heisenburgerfrr",
+    "rshellr",
+    "quavity",
     "Student",
     "Indie Developer",
     "Web Development",
@@ -30,9 +34,12 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
   ],
-  authors: [{ name: "Rone" }],
-  creator: "Rone",
-  publisher: "Rone",
+  authors: [{ name: "Rone Reji" }],
+  creator: "Rone Reji",
+  publisher: "Rone Reji",
+  alternates: {
+    canonical: siteUrl,
+  },
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
     icon: "/favicon.ico",
@@ -43,24 +50,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Rone Portfolio",
-    title: "Rone | Student & Indie Developer",
+    siteName: "Rone Reji Portfolio",
+    title: "Rone Reji | Student & Indie Developer",
     description:
-      "A student building independent web and software projects — streaming aggregators, automation tools, and short-form content pipelines — mostly self-taught, learning by shipping.",
+      "Rone Reji is a student & indie developer building independent web and software projects — streaming aggregators, automation tools, and content pipelines.",
     images: [
       {
         url: `${siteUrl}/img/profile-pic.jpg`,
         width: 1200,
         height: 630,
-        alt: "Rone | Student & Indie Developer",
+        alt: "Rone Reji - Student & Indie Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rone | Student & Indie Developer",
+    title: "Rone Reji | Student & Indie Developer",
     description:
-      "A student building independent web and software projects — streaming aggregators, automation tools, and short-form content pipelines — mostly self-taught, learning by shipping.",
+      "Rone Reji is a student & indie developer building independent web and software projects — streaming aggregators, automation tools, and content pipelines.",
     creator: "@RoneReji",
     images: [`${siteUrl}/img/profile-pic.jpg`],
   },
@@ -79,7 +86,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Rone",
+    title: "Rone Reji",
   },
 };
 
@@ -91,16 +98,27 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Rone",
+    name: "Rone Reji",
+    alternateName: ["Rone", "heisenburgerfrr", "rshellr", "quavity"],
     url: siteUrl,
     image: `${siteUrl}/img/profile-pic.jpg`,
     jobTitle: "Student & Indie Developer",
+    description:
+      "Student and indie developer building independent web and software projects.",
     email: "mailto:me@rone.cc.cd",
     sameAs: [
       "https://github.com/Heisenburgerfrr",
       "https://x.com/RoneReji",
       "https://www.instagram.com/heisenburgerfrr/",
     ],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Rone Reji Portfolio",
+    alternateName: "Rone Reji",
+    url: siteUrl,
   };
 
   return (
@@ -110,6 +128,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(personJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
         />
       </head>

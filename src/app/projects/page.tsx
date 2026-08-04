@@ -8,9 +8,30 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
+
 export default function AllProjects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projects",
+        item: `${siteUrl}/projects`,
+      },
+    ],
+  };
 
   return (
     <main
@@ -18,6 +39,12 @@ export default function AllProjects() {
       ref={ref}
       className="min-h-screen py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -26,7 +53,7 @@ export default function AllProjects() {
       >
         <div className="text-center mx-auto mb-8 sm:mb-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-            All Shipped Projects.
+            Shipped Projects by Rone Reji.
           </h1>
           <p className="text-sm sm:text-base text-gray-600 mt-1.5">
             A complete archive of independent builds, aggregators, and tools.
@@ -44,7 +71,7 @@ export default function AllProjects() {
                   <div className="bg-gray-50/85 border border-gray-100 rounded-xl overflow-hidden group">
                     <Image
                       src={`/img/${data.img}`}
-                      alt={`Screenshot of ${data.name}`}
+                      alt={`Screenshot of ${data.name} built by Rone Reji`}
                       width={900}
                       height={900}
                       className="rounded-xl w-full h-auto object-cover shadow-xs transition-transform duration-300 group-hover:scale-[1.03]"

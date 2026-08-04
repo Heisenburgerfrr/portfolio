@@ -24,14 +24,27 @@ export async function generateMetadata({
   }
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://rone.eu.cc";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
   const projectImage = `${baseUrl}/img/${project.img || "profile-pic.jpg"}`;
 
   return {
-    title: `${project.name} | Rone`,
-    description: project.desc,
+    title: `${project.name} | Rone Reji`,
+    description: `${project.name} built by Rone Reji — ${project.desc}`,
+    keywords: [
+      project.name,
+      "Rone Reji",
+      "Rone",
+      "heisenburgerfrr",
+      "rshellr",
+      "quavity",
+      "Indie Developer",
+      ...(project.lang || []),
+    ],
+    alternates: {
+      canonical: `${baseUrl}/project/${project.slug}`,
+    },
     openGraph: {
-      title: `${project.name} | Rone`,
+      title: `${project.name} | Rone Reji`,
       description: project.desc,
       type: "article",
       url: `${baseUrl}/project/${project.slug}`,
@@ -40,14 +53,15 @@ export async function generateMetadata({
           url: projectImage,
           width: 1200,
           height: 630,
-          alt: project.name,
+          alt: `${project.name} by Rone Reji`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.name} | Rone`,
+      title: `${project.name} | Rone Reji`,
       description: project.desc,
+      creator: "@RoneReji",
       images: [projectImage],
     },
   };
@@ -63,14 +77,50 @@ const ProjectPage = async ({
 
   if (!project) return notFound();
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Projects",
+        item: `${baseUrl}/projects`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.name,
+        item: `${baseUrl}/project/${project.slug}`,
+      },
+    ],
+  };
+
   return (
-    <ProjectPageContent
-      project={{
-        ...project,
-        img2: project.img2,
-        img3: project.img3,
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
+      />
+      <ProjectPageContent
+        project={{
+          ...project,
+          img2: project.img2,
+          img3: project.img3,
+        }}
+      />
+    </>
   );
 };
 

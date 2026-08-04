@@ -25,7 +25,7 @@ const About = () => {
             About
           </h2>
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-            I&apos;m Rone, a student and indie developer passionate about
+            I&apos;m Rone Reji, a student and indie developer passionate about
             building independent web and software applications.
           </p>
           <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -37,20 +37,36 @@ const About = () => {
           <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
             Whether it&apos;s crafting custom algorithms, designing bot-blocking
             middleware, or experimenting with novel web tools, I&apos;m always
-            building. You can check out my latest code on{" "}
+            building. Online, I also go by the handles{" "}
             <Link
               href="https://github.com/Heisenburgerfrr"
               target="_blank"
               rel="noopener noreferrer"
+              className="font-medium text-gray-900 underline hover:text-black"
+            >
+              heisenburgerfrr
+            </Link>
+            , <span className="font-medium text-gray-900">rshellr</span>, and{" "}
+            <span className="font-medium text-gray-900">quavity</span> across
+            developer networks and social platforms.
+          </p>
+          <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+            You can check out my latest code on{" "}
+            <Link
+              href="https://github.com/Heisenburgerfrr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Rone Reji GitHub profile (@Heisenburgerfrr)"
               className="hover:text-black font-semibold underline"
             >
-              GitHub
+              GitHub (@Heisenburgerfrr)
             </Link>{" "}
             or follow my updates on{" "}
             <Link
               href="https://x.com/RoneReji"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Rone Reji X profile (@RoneReji)"
               className="hover:text-black font-semibold underline"
             >
               X (@RoneReji)
@@ -76,7 +92,7 @@ const About = () => {
               src="/img/profile-pic.jpg"
               width={180}
               height={180}
-              alt="Rone profile picture"
+              alt="Rone Reji (@Heisenburgerfrr) profile picture"
               className="rounded-lg bg-white w-full max-w-[160px] sm:max-w-[180px] object-cover"
             />
             <span className="text-xs sm:text-sm block text-center mt-1.5 text-gray-800 font-medium">

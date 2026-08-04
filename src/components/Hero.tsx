@@ -26,7 +26,7 @@ const Hero = () => {
           <Image
             src="/img/profile-pic.jpg"
             className="rounded-full object-cover ring-4 ring-gray-100/90 shadow-sm w-28 h-28 sm:w-32 sm:h-32"
-            alt="Rone Profile Photo"
+            alt="Rone Reji - Student & Indie Developer profile photo"
             width={128}
             height={128}
             priority

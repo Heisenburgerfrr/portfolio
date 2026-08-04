@@ -72,13 +72,14 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/Heisenburgerfrr"
-                  aria-label="GitHub Profile"
+                  aria-label="Rone Reji GitHub Profile (@Heisenburgerfrr)"
+                  title="Rone Reji GitHub Profile (@Heisenburgerfrr)"
                   className="p-1 text-white/80 hover:text-white transition-colors"
                 >
                   <FiGithub className="size-4 sm:size-5" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent>GitHub</TooltipContent>
+              <TooltipContent>GitHub (@Heisenburgerfrr)</TooltipContent>
             </Tooltip>
 
             <Tooltip>
@@ -87,13 +88,14 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://x.com/RoneReji"
-                  aria-label="X Profile"
+                  aria-label="Rone Reji X Profile (@RoneReji)"
+                  title="Rone Reji X Profile (@RoneReji)"
                   className="p-1 text-white/80 hover:text-white transition-colors"
                 >
                   <FaXTwitter className="size-4 sm:size-5" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent>X</TooltipContent>
+              <TooltipContent>X (@RoneReji)</TooltipContent>
             </Tooltip>
 
             <Tooltip>
@@ -102,13 +104,14 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.instagram.com/heisenburgerfrr/"
-                  aria-label="Instagram Profile"
+                  aria-label="Rone Reji Instagram Profile (@heisenburgerfrr)"
+                  title="Rone Reji Instagram Profile (@heisenburgerfrr)"
                   className="p-1 text-white/80 hover:text-white transition-colors"
                 >
                   <FaInstagram className="size-4 sm:size-5" />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent>Instagram</TooltipContent>
+              <TooltipContent>Instagram (@heisenburgerfrr)</TooltipContent>
             </Tooltip>
           </div>
 

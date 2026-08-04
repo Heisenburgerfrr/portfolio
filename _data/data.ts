@@ -12,9 +12,9 @@ export const projects = [
       "Middleware",
       "Node.js",
     ],
-    img: "judesolar.png",
-    img2: "judesolar2.png",
-    img3: "judesolar3.png",
+    img: "cinepeak.png",
+    img2: "cinepeak2.png",
+    img3: "cinepeak3.png",
     link: "https://github.com/Heisenburgerfrr",
     git: "https://github.com/Heisenburgerfrr",
     problem:
@@ -28,7 +28,9 @@ export const projects = [
     show: "A satirical URL 'longener' that makes links longer using a custom bijective mnemonic encoding algorithm.",
     desc: "Longly turns concise links into hilariously long, memorable word sequences. Built around a custom bijective mnemonic encoding algorithm, it reverses standard URL shortening while preserving deterministic bidirectional mapping.",
     lang: ["React", "TypeScript", "Algorithms", "Tailwind CSS", "Next.js"],
-    img: "notionclone.png",
+    img: "longly.png",
+    img2: "longly2.png",
+    img3: "longly3.png",
     link: "https://github.com/Heisenburgerfrr",
     git: "https://github.com/Heisenburgerfrr",
     problem:

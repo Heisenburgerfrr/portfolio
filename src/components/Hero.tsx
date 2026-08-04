@@ -24,7 +24,7 @@ const Hero = () => {
           className="inline-flex items-center justify-center"
         >
           <Image
-            src="/img/profile-image.jpg"
+            src="/img/profile-pic.jpg"
             className="rounded-full object-cover ring-4 ring-gray-100/90 shadow-sm w-28 h-28 sm:w-32 sm:h-32"
             alt="Rone Profile Photo"
             width={128}

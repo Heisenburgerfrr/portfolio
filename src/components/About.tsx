@@ -71,12 +71,7 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="flex justify-center mt-8 px-4"
         >
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ duration: 0.2 }}
-            className="py-2.5 px-3 bg-white shadow-xs border border-gray-200/80 rounded-xl w-fit"
-          >
+          <div className="py-2.5 px-3 bg-white shadow-xs border border-gray-200/80 rounded-xl w-fit">
             <Image
               src="/img/profile-pic.jpg"
               width={180}
@@ -87,7 +82,7 @@ const About = () => {
             <span className="text-xs sm:text-sm block text-center mt-1.5 text-gray-800 font-medium">
               @Heisenburgerfrr
             </span>
-          </motion.div>
+          </div>
         </motion.div>
       </Link>
 

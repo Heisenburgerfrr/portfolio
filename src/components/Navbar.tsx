@@ -16,14 +16,15 @@ const Navbar = () => {
   return (
     <header className="py-4">
       <nav className="w-[calc(100%-2rem)] max-w-[586px] mx-auto bg-black/80 backdrop-blur-md flex items-center justify-between py-2 px-3 sm:px-4 rounded-full border border-white/10 shadow-lg fixed left-0 right-0 z-50 transition-all duration-300">
-        <div className="shrink-0">
-          <Link href="/" aria-label="Home page">
+        <div className="shrink-0 flex items-center pl-1 sm:pl-2">
+          <Link href="/" aria-label="Home page" className="flex items-center">
             <Image
               src="/img/brandLogo.png"
               alt="Rone Logo"
-              width={28}
-              height={28}
-              className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+              width={60}
+              height={16}
+              className="w-auto max-w-[60px] h-[14px] sm:h-[15px] object-contain"
+              priority
             />
           </Link>
         </div>
@@ -35,7 +36,7 @@ const Navbar = () => {
                 variant="link"
                 size="sm"
                 asChild
-                className="text-white/90 hover:text-white px-2 text-xs sm:text-sm"
+                className="text-white/90 hover:text-white px-2 text-xs sm:text-sm font-medium"
               >
                 <Link href="/">Home</Link>
               </Button>
@@ -45,7 +46,7 @@ const Navbar = () => {
                 variant="link"
                 size="sm"
                 asChild
-                className="text-white/90 hover:text-white px-2 text-xs sm:text-sm"
+                className="text-white/90 hover:text-white px-2 text-xs sm:text-sm font-medium"
               >
                 <Link href="/#projects">Projects</Link>
               </Button>
@@ -55,7 +56,7 @@ const Navbar = () => {
                 variant="link"
                 size="sm"
                 asChild
-                className="text-white/90 hover:text-white px-2 text-xs sm:text-sm"
+                className="text-white/90 hover:text-white px-2 text-xs sm:text-sm font-medium"
               >
                 <Link href="/#experience">Builds</Link>
               </Button>

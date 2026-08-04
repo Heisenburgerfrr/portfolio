@@ -10,7 +10,7 @@ import { motion, useInView } from "framer-motion";
 
 export default function AllProjects() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <main
@@ -19,9 +19,9 @@ export default function AllProjects() {
       className="min-h-screen py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
     >
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="mt-6 sm:mt-10 py-2"
       >
         <div className="text-center mx-auto mb-8 sm:mb-10">
@@ -34,33 +34,21 @@ export default function AllProjects() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-          {projects.map((data, index) => (
-            <motion.div
+          {projects.map((data) => (
+            <div
               key={data.slug}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-              className="border border-gray-200/80 rounded-2xl flex flex-col justify-between bg-white/60 hover:shadow-md transition-all duration-300"
+              className="border border-gray-200/80 rounded-2xl flex flex-col justify-between bg-white/60 hover:shadow-md hover:border-gray-300/80 transition-all duration-300"
             >
               <div className="p-5 flex flex-col h-full justify-between space-y-4">
                 <div>
-                  <div className="bg-gray-50/85 border border-gray-100 rounded-xl overflow-hidden">
-                    <motion.div
-                      whileHover={{ scale: 1.04 }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <Image
-                        src={`/img/${data.img}`}
-                        alt={`Screenshot of ${data.name}`}
-                        width={900}
-                        height={900}
-                        className="rounded-xl w-full h-auto object-cover shadow-xs"
-                      />
-                    </motion.div>
+                  <div className="bg-gray-50/85 border border-gray-100 rounded-xl overflow-hidden group">
+                    <Image
+                      src={`/img/${data.img}`}
+                      alt={`Screenshot of ${data.name}`}
+                      width={900}
+                      height={900}
+                      className="rounded-xl w-full h-auto object-cover shadow-xs transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
                   </div>
 
                   <h2 className="text-xl sm:text-[22px] font-bold mt-4 tracking-tight text-gray-900">
@@ -86,7 +74,7 @@ export default function AllProjects() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </motion.div>

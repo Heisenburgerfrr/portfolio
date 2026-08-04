@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import { toast } from "sonner";
 import { motion, useInView } from "framer-motion";
 
-const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "me@rone.eu.cc";
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "me@rone.cc.cd";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });

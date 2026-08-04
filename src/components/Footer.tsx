@@ -3,7 +3,7 @@ import React from "react";
 import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 
-const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "me@rone.eu.cc";
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "me@rone.cc.cd";
 
 const Footer = () => {
   return (

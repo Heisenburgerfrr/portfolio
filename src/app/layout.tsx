@@ -95,7 +95,7 @@ export default function RootLayout({
     url: siteUrl,
     image: `${siteUrl}/img/profile-pic.jpg`,
     jobTitle: "Student & Indie Developer",
-    email: "mailto:me@rone.eu.cc",
+    email: "mailto:me@rone.cc.cd",
     sameAs: [
       "https://github.com/Heisenburgerfrr",
       "https://x.com/RoneReji",

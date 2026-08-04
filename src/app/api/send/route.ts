@@ -7,7 +7,7 @@ export async function POST(req: Request) {
 
     const apiKey = process.env.RESEND_API_KEY;
     const recipientEmail =
-      process.env.NEXT_PUBLIC_CONTACT_EMAIL || process.env.RESEND_TO_EMAIL;
+      process.env.RESEND_TO_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 
     if (!apiKey) {
       console.warn("RESEND_API_KEY is not configured.");
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     }
 
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: recipientEmail,
       subject: `New message from ${name}`,
@@ -33,7 +33,15 @@ export async function POST(req: Request) {
       text: `From ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
-    return NextResponse.json({ success: true });
+    if (error) {
+      console.error("Resend delivery error:", error);
+      return NextResponse.json(
+        { error: error.message || "Failed to send message" },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error("Failed to send message:", error);
     return NextResponse.json(

@@ -88,7 +88,7 @@ Designed and built for **Rone** (Student & Indie Developer) to showcase independ
 
    ```env
    RESEND_API_KEY=re_your_api_key_here
-   NEXT_PUBLIC_CONTACT_EMAIL=me@rone.eu.cc
+   NEXT_PUBLIC_CONTACT_EMAIL=me@example.com
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
    ```
 
@@ -114,4 +114,4 @@ Designed and built for **Rone** (Student & Indie Developer) to showcase independ
 - **Rone** — Student & Indie Developer
 - **GitHub**: [@Heisenburgerfrr](https://github.com/Heisenburgerfrr)
 - **X**: [@RoneReji](https://x.com/RoneReji)
-- **Email**: [me@rone.eu.cc](mailto:me@rone.eu.cc)
+- **Email**: [me@rone.cc.cd](mailto:me@rone.cc.cd)

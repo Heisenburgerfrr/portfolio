@@ -1,13 +1,13 @@
 {
   "name": "rone-portfolio",
   "version": "0.1.0",
-  "author": "Rone <me@rone.eu.cc>",
+  "author": "Rone <me@rone.cc.cd>",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -20,7 +20,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.12.0",
     "lucide-react": "^0.510.0",
-    "next": "15.3.8",
+    "next": "16.2.12",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -38,7 +38,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "16.2.12",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
     "sharp": "^0.35.3",

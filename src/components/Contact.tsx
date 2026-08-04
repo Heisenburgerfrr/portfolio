@@ -39,22 +39,27 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" ref={ref} className="px-4 sm:px-8 md:px-14 mt-30">
+    <section
+      id="contact"
+      ref={ref}
+      className="px-4 sm:px-8 md:px-12 mt-20 sm:mt-24 md:mt-28"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="grid text-wrap"
       >
-        <h2 className="text-black font-bold text-3xl">Get in touch</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
+          Get in touch
+        </h2>
 
-        <p className="prose mt-2 text-gray-600">
+        <p className="mt-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl">
           Whether it&apos;s a project collaboration, feedback, or just to say
           hi, I&apos;m always excited to connect with people who love building
           interesting things. Drop a message or reach out directly at{" "}
           <a
             href={`mailto:${contactEmail}`}
-            className="underline font-semibold"
+            className="underline font-semibold text-gray-900 hover:text-black"
           >
             {contactEmail}
           </a>
@@ -66,56 +71,54 @@ const Contact = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        className="py-2"
+        className="py-2 mt-8"
       >
-        <div className="mt-8">
-          <form onSubmit={handleSubmit}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-              <input
-                type="text"
-                id="name"
-                placeholder="Full Name"
-                aria-label="Full Name"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full sm:w-auto border py-4 px-6 rounded-xl bg-[#F2F2F2] focus:outline-black flex-1"
-                required
-              />
-              <input
-                type="email"
-                id="email"
-                placeholder="Email Address"
-                aria-label="Email Address"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full sm:w-auto border py-4 px-8 rounded-xl bg-[#F2F2F2] focus:outline-black flex-1"
-                required
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <input
+              type="text"
+              id="name"
+              placeholder="Full Name"
+              aria-label="Full Name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="w-full border border-gray-200 py-4 px-6 rounded-xl bg-gray-50 focus:bg-white focus:outline-black text-base transition-colors flex-1"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              aria-label="Email Address"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full border border-gray-200 py-4 px-6 rounded-xl bg-gray-50 focus:bg-white focus:outline-black text-base transition-colors flex-1"
+              required
+            />
+          </div>
 
-            <div className="mt-2">
-              <textarea
-                placeholder="Hi Rone, love your work on..."
-                aria-label="Your Message"
-                id="message"
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="inline-flex w-full resize-none h-40 px-4 py-3 bg-[#F2F2F2] rounded-xl focus:outline-black mt-2 border"
-                required
-              ></textarea>
-            </div>
+          <div>
+            <textarea
+              placeholder="Hi Rone, love your work on..."
+              aria-label="Your Message"
+              id="message"
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className="w-full resize-none h-40 border border-gray-200 py-4 px-6 rounded-xl bg-gray-50 focus:bg-white focus:outline-black text-base transition-colors"
+              required
+            ></textarea>
+          </div>
 
-            <div className="mt-4">
-              <Button
-                className="border text-center py-6 inline-flex w-full cursor-pointer bg-black/90 text-white text-base hover:!bg-black/80"
-                type="submit"
-                disabled={loading}
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </Button>
-            </div>
-          </form>
-        </div>
+          <div className="pt-2">
+            <Button
+              className="w-full border text-center py-5 min-h-[56px] cursor-pointer bg-black/90 text-white text-base sm:text-lg font-semibold hover:!bg-black rounded-xl transition-all shadow-xs"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </Button>
+          </div>
+        </form>
       </motion.div>
     </section>
   );

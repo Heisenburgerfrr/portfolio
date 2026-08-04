@@ -70,7 +70,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
             <h2 className="font-bold text-base sm:text-lg text-gray-900">
               Description
             </h2>
-            <p className="text-xs sm:text-sm text-gray-700 mt-2 leading-relaxed">
+            <p className="text-sm text-gray-700 mt-2 leading-relaxed">
               {project.desc}
             </p>
 
@@ -95,7 +95,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
           <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8">
             <Button
               asChild
-              className="!py-3.5 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto text-xs sm:text-sm"
+              className="!py-4 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl"
             >
               <Link
                 target="_blank"
@@ -104,14 +104,14 @@ export function ProjectPageContent({ project }: { project: Project }) {
               >
                 <div className="flex items-center justify-center gap-2">
                   <span>View Project</span>
-                  <ExternalLink className="size-4" />
+                  <ExternalLink className="size-5" />
                 </div>
               </Link>
             </Button>
 
             <Button
               asChild
-              className="!py-3.5 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto text-xs sm:text-sm"
+              className="!py-4 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl"
             >
               <Link
                 target="_blank"
@@ -120,7 +120,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
               >
                 <div className="flex items-center justify-center gap-2">
                   <span>GitHub Repository</span>
-                  <FiGithub className="size-4" />
+                  <FiGithub className="size-5" />
                 </div>
               </Link>
             </Button>

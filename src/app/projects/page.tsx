@@ -24,11 +24,11 @@ export default function AllProjects() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mt-6 sm:mt-10 py-2"
       >
-        <div className="text-center mx-auto mb-8 sm:mb-12">
+        <div className="text-center mx-auto mb-8 sm:mb-10">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
             All Shipped Projects.
           </h1>
-          <p className="text-sm sm:text-base text-gray-500 mt-1.5">
+          <p className="text-sm sm:text-base text-gray-600 mt-1.5">
             A complete archive of independent builds, aggregators, and tools.
           </p>
         </div>
@@ -46,11 +46,11 @@ export default function AllProjects() {
               }}
               className="border border-gray-200/80 rounded-2xl flex flex-col justify-between bg-white/60 hover:shadow-md transition-all duration-300"
             >
-              <div className="p-4 sm:p-5 flex flex-col h-full justify-between space-y-4">
+              <div className="p-5 flex flex-col h-full justify-between space-y-4">
                 <div>
                   <div className="bg-gray-50/85 border border-gray-100 rounded-xl overflow-hidden">
                     <motion.div
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.04 }}
                       transition={{ duration: 0.4 }}
                     >
                       <Image
@@ -63,11 +63,11 @@ export default function AllProjects() {
                     </motion.div>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-bold mt-4 tracking-tight text-gray-900">
+                  <h2 className="text-xl sm:text-[22px] font-bold mt-4 tracking-tight text-gray-900">
                     {data.name}
                   </h2>
 
-                  <p className="text-xs sm:text-sm text-gray-600 line-clamp-3 mt-2 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 line-clamp-3 mt-2 leading-relaxed">
                     {data.desc}
                   </p>
                 </div>
@@ -75,12 +75,12 @@ export default function AllProjects() {
                 <div className="pt-2">
                   <Button
                     asChild
-                    className="!cursor-pointer !bg-gray-100 hover:!bg-gray-200 px-4 py-3 text-xs sm:text-sm font-medium rounded-xl w-full text-black transition-colors"
+                    className="!cursor-pointer !bg-gray-100 hover:!bg-gray-200 px-4.5 py-3.5 min-h-[46px] text-sm sm:text-base font-semibold rounded-xl w-full text-black transition-colors"
                   >
                     <Link href={`/project/${data.slug}`}>
                       <div className="flex items-center justify-center gap-2">
                         <span>View Project</span>
-                        <ChevronRight className="size-4" />
+                        <ChevronRight className="size-4 sm:size-5" />
                       </div>
                     </Link>
                   </Button>

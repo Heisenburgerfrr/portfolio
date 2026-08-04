@@ -13,7 +13,7 @@ const About = () => {
   return (
     <div
       ref={ref}
-      className="py-16 sm:py-20 md:py-24 mt-6 sm:mt-10 px-4 sm:px-6 md:px-8"
+      className="py-14 sm:py-18 md:py-20 mt-4 sm:mt-8 px-4 sm:px-6 md:px-8"
     >
       <div className="max-w-2xl mx-auto text-wrap prose">
         <motion.div
@@ -21,7 +21,7 @@ const About = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="font-bold text-2xl sm:text-3xl text-black/90 mb-4 tracking-tight">
+          <h2 className="font-bold text-2xl sm:text-3xl text-gray-900 mb-3.5 tracking-tight">
             About
           </h2>
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -69,7 +69,7 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="flex justify-center mt-8 sm:mt-10 px-4"
+          className="flex justify-center mt-8 px-4"
         >
           <motion.div
             whileHover={{ scale: 1.04 }}
@@ -99,7 +99,7 @@ const About = () => {
       >
         <Button
           asChild
-          className="!bg-black/90 text-white !cursor-pointer py-3.5 px-6 hover:!bg-black/82 text-sm w-full sm:w-auto"
+          className="!bg-black/90 text-white !cursor-pointer py-3.5 px-7 min-h-[46px] hover:!bg-black/82 text-sm sm:text-base font-semibold rounded-xl w-full sm:w-auto"
         >
           <a href="#contact" aria-label="Get in touch for collaboration">
             Let&apos;s connect!

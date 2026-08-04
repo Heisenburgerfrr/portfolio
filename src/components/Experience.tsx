@@ -37,43 +37,34 @@ const timelineItems = [
 
 const Experience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <section id="experience" ref={ref} className="px-4 sm:px-8 md:px-12">
-      <hr className="mt-24 border-gray-100" />
+      <hr className="mt-20 border-gray-100" />
 
-      <div className="mt-16">
+      <div className="mt-14">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <div className="mb-8">
-            <h2 className="font-bold text-3xl tracking-tight text-black">
+          <div className="text-center mx-auto mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
               Build Timeline
             </h2>
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-sm sm:text-base text-gray-600 mt-1.5">
               Independent projects and software pipelines shipped in the open.
             </p>
           </div>
 
           <div className="space-y-4">
-            {timelineItems.map((item, index) => {
+            {timelineItems.map((item) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <div
                   key={item.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={
-                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                  }
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.15 + 0.2,
-                    ease: "easeOut",
-                  }}
-                  className="group relative p-5 rounded-2xl border border-gray-200/80 bg-white/60 hover:bg-gray-50/80 hover:border-gray-300 transition-all duration-300 shadow-xs"
+                  className="group relative p-5 rounded-2xl border border-gray-200/80 bg-white/60 hover:bg-gray-50/80 hover:border-gray-300 transition-colors duration-300 shadow-xs"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-start sm:items-center gap-4">
@@ -81,28 +72,28 @@ const Experience = () => {
                         <Icon className="size-5" />
                       </div>
                       <div>
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="font-bold text-lg text-gray-900 group-hover:text-black">
+                        <div className="flex items-center gap-2.5 flex-wrap">
+                          <h3 className="text-xl sm:text-[22px] font-bold tracking-tight text-gray-900 group-hover:text-black">
                             {item.title}
                           </h3>
                           <span
-                            className={`text-xs px-2.5 py-0.5 rounded-full font-medium border ${item.statusColor}`}
+                            className={`text-xs sm:text-sm px-2.5 py-0.5 rounded-full font-medium border ${item.statusColor}`}
                           >
                             {item.category}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-600 mt-0.5">
+                        <p className="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">
                           {item.description}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 self-end sm:self-center">
+                    <div className="flex items-center gap-3 self-end sm:self-center">
                       <div className="flex items-center gap-1.5 flex-wrap hidden md:flex">
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs px-2 py-0.5 rounded-md bg-gray-100 text-gray-600 font-medium"
+                            className="text-xs sm:text-sm px-2.5 py-0.5 rounded-md bg-gray-100 text-gray-600 font-medium"
                           >
                             {tag}
                           </span>
@@ -117,26 +108,21 @@ const Experience = () => {
                       </Link>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-            className="mt-10 p-6 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50/50 to-indigo-50/30"
-          >
-            <div className="flex items-start gap-3">
-              <div className="p-2 rounded-xl bg-blue-500 text-white shrink-0 mt-0.5">
+          <div className="mt-8 p-5 sm:p-6 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50/50 to-indigo-50/30">
+            <div className="flex items-start gap-3.5">
+              <div className="p-2.5 rounded-xl bg-blue-500 text-white shrink-0 mt-0.5">
                 <Star className="size-4" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 text-base">
+                <h4 className="font-semibold text-gray-900 text-base sm:text-lg">
                   Indie Developer Philosophy
                 </h4>
-                <p className="text-sm text-gray-600 mt-1 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">
                   I learn by shipping independent web applications, exploring
                   algorithm design, and building automated software pipelines.
                   Always building, experimenting, and refining solutions in the
@@ -144,11 +130,11 @@ const Experience = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 
-      <hr className="mt-16 border-gray-100" />
+      <hr className="mt-14 border-gray-100" />
     </section>
   );
 };

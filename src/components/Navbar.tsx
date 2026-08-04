@@ -58,7 +58,7 @@ const Navbar = () => {
                 asChild
                 className="text-white/90 hover:text-white px-2 text-xs sm:text-sm font-medium"
               >
-                <Link href="/#experience">Builds</Link>
+                <Link href="/#timeline">Timeline</Link>
               </Button>
             </li>
           </ul>

@@ -77,7 +77,7 @@ const Project = () => {
         <div className="flex justify-center mt-10 sm:mt-12">
           <Button
             asChild
-            className="!cursor-pointer !bg-black hover:!bg-black/90 px-7 py-4 min-h-[50px] text-sm sm:text-base font-semibold rounded-xl text-white w-full sm:w-auto transition-transform hover:scale-[1.02]"
+            className="!cursor-pointer !bg-black hover:!bg-black/90 px-7 py-4 min-h-[50px] text-sm sm:text-base font-semibold rounded-xl text-white w-full sm:w-auto"
           >
             <Link href="/projects">
               <div className="flex items-center justify-center gap-2">

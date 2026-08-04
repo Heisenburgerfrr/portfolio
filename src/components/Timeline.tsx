@@ -35,12 +35,12 @@ const timelineItems = [
   },
 ];
 
-const Experience = () => {
+const Timeline = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="experience" ref={ref} className="px-4 sm:px-8 md:px-12">
+    <section id="timeline" ref={ref} className="px-4 sm:px-8 md:px-12">
       <hr className="mt-20 border-gray-100" />
 
       <div className="mt-14">
@@ -139,4 +139,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Timeline;

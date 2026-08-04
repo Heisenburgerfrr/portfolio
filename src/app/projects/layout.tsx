@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { getSiteUrl } from "@/lib/utils";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   title: "Projects | Rone Reji - Indie Developer",

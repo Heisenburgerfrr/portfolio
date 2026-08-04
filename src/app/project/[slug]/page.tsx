@@ -2,6 +2,7 @@ import { projects } from "../../../../_data/data";
 import { notFound } from "next/navigation";
 import { ProjectPageContent } from "@/components/ProjectPageContent";
 import type { Metadata } from "next";
+import { getSiteUrl } from "@/lib/utils";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -23,8 +24,7 @@ export async function generateMetadata({
     };
   }
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
+  const baseUrl = getSiteUrl();
   const projectImage = `${baseUrl}/img/${project.img || "profile-pic.jpg"}`;
 
   return {
@@ -77,8 +77,7 @@ const ProjectPage = async ({
 
   if (!project) return notFound();
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
+  const baseUrl = getSiteUrl();
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",

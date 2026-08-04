@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
+import { getSiteUrl } from "@/lib/utils";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rone.cc.cd";
+const siteUrl = getSiteUrl();
 
 export default function AllProjects() {
   const ref = useRef(null);

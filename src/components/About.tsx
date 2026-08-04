@@ -11,82 +11,57 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="py-28 mt-10 px-4 sm:px-6 lg:px-4">
-      <div className="max-w-2xl grid items-center justify-start text-wrap mx-auto prose">
+    <div
+      ref={ref}
+      className="py-16 sm:py-20 md:py-24 mt-6 sm:mt-10 px-4 sm:px-6 md:px-8"
+    >
+      <div className="max-w-2xl mx-auto text-wrap prose">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="font-bold text-3xl text-black/90 mb-4">About</h2>
-          <p>
-            I&apos;m Adebanjo Stephen, a passionate self-taught Nigerian
-            software engineer and an aspiring AI & Machine Language Expert with
-            over 2yr +2 months of experience and a strong drive for building
-            impactful web experiences.
+          <h2 className="font-bold text-2xl sm:text-3xl text-black/90 mb-4 tracking-tight">
+            About
+          </h2>
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            I&apos;m Rone, a student and indie developer passionate about
+            building independent web and software applications.
           </p>
-          <p className="mt-2">
-            I’ve built and shipped real-world AI products and I’m just getting
-            started. I love solving real problems through tech, learning fast,
-            and creating beautiful, high-performing user interfaces.
+          <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+            My work spans streaming aggregators, automation tools, and
+            short-form content pipelines. I&apos;m mostly self-taught, believing
+            that the best way to master software development is by shipping
+            projects to production.
           </p>
-          <p className="mt-2">
-            I’m currently working with{" "}
+          <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+            Whether it&apos;s crafting custom algorithms, designing bot-blocking
+            middleware, or experimenting with novel web tools, I&apos;m always
+            building. You can check out my latest code on{" "}
             <Link
-              href="https://www.linkedin.com/company/externhq/posts/?feedView=all"
+              href="https://github.com/Heisenburgerfrr"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-green-900 font-semibold"
+              className="hover:text-black font-semibold underline"
             >
-              Extern
+              GitHub
             </Link>{" "}
-            on advanced full-stack projects, diving deeper into AI, and actively
-            preparing to land a role at a world-class company like{" "}
-            <strong>Google</strong>. I’m also open to freelance and
-            collaboration opportunities.
-          </p>
-          <p className="mt-2">
-            I’m also actively building my presence in the tech community. With
-            over <strong>200+ followers on X, </strong>
-            I’ve learned and connected with top minds, mentors in the indie
-            hacker and maker space — including people like{" "}
+            or follow my updates on{" "}
             <Link
-              href="https://x.com/marc_louvion"
+              href="https://x.com/RoneReji"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-black font-semibold underline"
             >
-              <strong>@Marc Lou,</strong>
-            </Link>{" "}
-            <Link
-              href="https://x.com/johnrushx"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>@johnrushx,</strong>
-            </Link>{" "}
-            <Link
-              href="https://x.com/tdinh_me"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>@tdinh_me,</strong>
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="https://x.com/levelsio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>@levelsio.</strong>
-            </Link>{" "}
-            Their guidance and content have helped shape how I think about
-            product-building, growth, and shipping fast.
+              X (@RoneReji)
+            </Link>
+            .
           </p>
         </motion.div>
       </div>
 
       <Link
-        href="https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/"
+        href="https://github.com/Heisenburgerfrr"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -94,23 +69,23 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="flex justify-center mt-10 px-4"
+          className="flex justify-center mt-8 sm:mt-10 px-4"
         >
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
             transition={{ duration: 0.2 }}
-            className="py-2 px-3 bg-white shadow-sm rounded-sm w-fit"
+            className="py-2.5 px-3 bg-white shadow-xs border border-gray-200/80 rounded-xl w-fit"
           >
             <Image
               src="/img/profile-pic.jpg"
-              width={200}
-              height={200}
-              alt="Adebanjo Stephen profile headshot"
-              className="rounded-sm bg-white w-full max-w-[200px]"
+              width={180}
+              height={180}
+              alt="Rone profile picture"
+              className="rounded-lg bg-white w-full max-w-[160px] sm:max-w-[180px] object-cover"
             />
-            <span className="text-sm block text-center mt-1 text-gray-800 font-medium">
-              @midecode
+            <span className="text-xs sm:text-sm block text-center mt-1.5 text-gray-800 font-medium">
+              @Heisenburgerfrr
             </span>
           </motion.div>
         </motion.div>
@@ -124,10 +99,10 @@ const About = () => {
       >
         <Button
           asChild
-          className="!bg-black/90 text-white !cursor-pointer !py-4 !px-6 hover:!bg-black/82"
+          className="!bg-black/90 text-white !cursor-pointer py-3.5 px-6 hover:!bg-black/82 text-sm w-full sm:w-auto"
         >
-          <a href="#contact" aria-label="Contact for collaboration">
-            Let&apos;s collaborate!
+          <a href="#contact" aria-label="Get in touch for collaboration">
+            Let&apos;s connect!
           </a>
         </Button>
       </motion.div>

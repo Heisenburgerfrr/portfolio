@@ -6,10 +6,20 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: Request) {
   const { name, email, message } = await req.json();
 
+  const recipientEmail =
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL || process.env.RESEND_TO_EMAIL;
+
+  if (!recipientEmail) {
+    return NextResponse.json(
+      { error: "Recipient email is not configured" },
+      { status: 500 }
+    );
+  }
+
   try {
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: process.env.RESEND_TO_EMAIL!,
+      to: recipientEmail,
       subject: `New message from ${name}`,
       replyTo: email,
       text: `From ${name}\nEmail: ${email}\n\nMessage:\n${message}`,

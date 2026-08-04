@@ -1,54 +1,59 @@
 import { Mail } from "lucide-react";
 import React from "react";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
-import { FaLinkedin } from "react-icons/fa";
+
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "me@rone.eu.cc";
 
 const Footer = () => {
   return (
-    <footer className="px-12 pb-20">
-      <hr className="mt-23" />
+    <footer className="px-4 sm:px-8 md:px-12 pb-12 sm:pb-16">
+      <hr className="mt-16 sm:mt-20 border-gray-100" />
 
       <div className="mt-6 text-center">
-        <span className="text-gray-600 text-[16px] tracking-normal">
-          © 2025 Adebanjo Stephen. All rights reserved.
+        <span className="text-gray-500 text-xs sm:text-sm tracking-normal">
+          © 2025 Rone. All rights reserved.
         </span>
 
-        <div className="flex items-center justify-center gap-6 mt-2">
+        <div className="flex items-center justify-center gap-5 sm:gap-6 mt-3">
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href="https://x.com/AdebanjoSt63916"
-            aria-label="X (Twitter) profile"
+            href="https://x.com/RoneReji"
+            aria-label="X profile"
+            className="text-gray-600 hover:text-black transition-colors"
           >
-            <FaXTwitter className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
+            <FaXTwitter className="size-4 sm:size-5" />
           </a>
 
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/SteeveSticks"
+            href="https://github.com/Heisenburgerfrr"
             aria-label="GitHub profile"
+            className="text-gray-600 hover:text-black transition-colors"
           >
-            <FiGithub className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
+            <FiGithub className="size-4 sm:size-5" />
           </a>
 
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/"
-            aria-label="LinkedIn profile"
+            href="https://www.instagram.com/heisenburgerfrr/"
+            aria-label="Instagram profile"
+            className="text-gray-600 hover:text-black transition-colors"
           >
-            <FaLinkedin className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
+            <FaInstagram className="size-4 sm:size-5" />
           </a>
 
           <a
             rel="noopener noreferrer"
             target="_blank"
-            href="mailto:stephenadebanjo86@gmail.com"
+            href={`mailto:${contactEmail}`}
             aria-label="Send email"
+            className="text-gray-600 hover:text-black transition-colors"
           >
-            <Mail className="size-5 text-gray-700 hover:text-gray-600 cursor-pointer" />
+            <Mail className="size-4 sm:size-5" />
           </a>
         </div>
       </div>

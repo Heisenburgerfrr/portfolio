@@ -50,40 +50,40 @@ export function ProjectPageContent({ project }: { project: Project }) {
   }, [lightboxSrc, closeLightbox]);
 
   return (
-    <div className="py-3 px-4 sm:px-6 md:px-10">
-      <div ref={ref} className="mt-30 text-wrap">
+    <div className="py-6 sm:py-8 px-4 sm:px-6 md:px-8">
+      <div ref={ref} className="mt-20 sm:mt-24 md:mt-28 text-wrap">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.85, ease: "easeOut" }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <div>
-            <h1 className="font-semibold text-[32px] sm:text-[38px] md:text-[45px]">
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-gray-900">
               {project.name}
             </h1>
-            <p className="flex-grow text-gray-600 text-[16px] sm:text-[18px] md:text-[19px] mt-0">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-2 leading-relaxed">
               {project.show}
             </p>
           </div>
 
-          <div className="mt-8 rounded-xl border p-4 sm:p-6 md:p-4 bg-[#FAFAFA]">
-            <h2 className="font-bold text-[16px] sm:text-[17px] md:text-[18px]">
+          <div className="mt-6 sm:mt-8 rounded-2xl border border-gray-200/80 p-4 sm:p-6 bg-gray-50/50">
+            <h2 className="font-bold text-base sm:text-lg text-gray-900">
               Description
             </h2>
-            <p className="text-base text-wrap prose font-light text-gray-700 mt-2 flex-grow">
+            <p className="text-xs sm:text-sm text-gray-700 mt-2 leading-relaxed">
               {project.desc}
             </p>
 
-            <hr className="mt-8 mb-8" />
+            <hr className="my-6 border-gray-200" />
 
             <div>
-              <h2 className="font-bold text-[16px] sm:text-[17px] md:text-[18px]">
+              <h2 className="font-bold text-base sm:text-lg text-gray-900">
                 Technologies
               </h2>
-              <ul className="flex flex-wrap gap-2 mt-3 ">
+              <ul className="flex flex-wrap gap-2 mt-3">
                 {project.lang.map((tech) => (
                   <li key={tech}>
-                    <span className="py-1.5 px-2 bg-[#E1F9DC] text-[#178D00] text-sm !rounded-full">
+                    <span className="py-1 px-2.5 bg-[#E1F9DC] text-[#178D00] text-xs sm:text-sm font-medium rounded-full inline-block">
                       {tech}
                     </span>
                   </li>
@@ -92,35 +92,41 @@ export function ProjectPageContent({ project }: { project: Project }) {
             </div>
           </div>
 
-          <div className="py-2 flex justify-between gap-3 mt-8">
+          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8">
             <Button
               asChild
-              className="!py-6 mt-3 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer"
+              className="!py-3.5 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto text-xs sm:text-sm"
             >
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
                 href={project.link}
               >
-                View Project <ExternalLink />
+                <div className="flex items-center justify-center gap-2">
+                  <span>View Project</span>
+                  <ExternalLink className="size-4" />
+                </div>
               </Link>
             </Button>
 
             <Button
               asChild
-              className="!py-6 hover:!bg-black/82 mt-3 !bg-black/90 text-white !cursor-pointer"
+              className="!py-3.5 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto text-xs sm:text-sm"
             >
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
                 href={project.git}
               >
-                Github <FiGithub />
+                <div className="flex items-center justify-center gap-2">
+                  <span>GitHub Repository</span>
+                  <FiGithub className="size-4" />
+                </div>
               </Link>
             </Button>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-8 sm:mt-12 space-y-6">
             <div
               role="button"
               tabIndex={0}
@@ -128,7 +134,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
               onKeyDown={(e) =>
                 e.key === "Enter" && setLightboxSrc(`/img/${project.img}`)
               }
-              className="bg-gray-50/85 border px-2 sm:px-4 md:px-7 py-2 sm:py-4 md:py-7 rounded-2xl cursor-pointer"
+              className="bg-gray-50/85 border border-gray-200/80 p-2 sm:p-4 rounded-2xl cursor-pointer hover:shadow-md transition-shadow"
               aria-label="View image larger"
             >
               <Image
@@ -136,12 +142,12 @@ export function ProjectPageContent({ project }: { project: Project }) {
                 alt={`Screenshot of ${project.name} project`}
                 width={900}
                 height={900}
-                className="rounded-2xl w-full h-auto shadow-md"
+                className="rounded-xl w-full h-auto object-cover shadow-xs"
               />
             </div>
 
             {(project.img2 ?? project.img3) && (
-              <div className="flex justify-center items-center gap-4 mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {project.img2 && (
                   <div
                     role="button"
@@ -151,7 +157,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                       e.key === "Enter" &&
                       setLightboxSrc(`/img/${project.img2}`)
                     }
-                    className="bg-gray-50/85 border px-2 sm:px-3 md:px-5 py-2 sm:py-3 md:py-5 rounded-2xl cursor-pointer"
+                    className="bg-gray-50/85 border border-gray-200/80 p-2 sm:p-3 rounded-2xl cursor-pointer hover:shadow-md transition-shadow"
                     aria-label="View image larger"
                   >
                     <Image
@@ -159,7 +165,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                       alt={`Screenshot 2 of ${project.name} project`}
                       width={400}
                       height={400}
-                      className="rounded-2xl w-full h-auto shadow-md"
+                      className="rounded-xl w-full h-auto object-cover shadow-xs"
                     />
                   </div>
                 )}
@@ -172,7 +178,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                       e.key === "Enter" &&
                       setLightboxSrc(`/img/${project.img3}`)
                     }
-                    className="bg-gray-50/85 border px-2 sm:px-3 md:px-5 py-2 sm:py-3 md:py-5 rounded-2xl cursor-pointer"
+                    className="bg-gray-50/85 border border-gray-200/80 p-2 sm:p-3 rounded-2xl cursor-pointer hover:shadow-md transition-shadow"
                     aria-label="View image larger"
                   >
                     <Image
@@ -180,7 +186,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                       alt={`Screenshot 3 of ${project.name} project`}
                       width={400}
                       height={400}
-                      className="rounded-2xl w-full h-auto shadow-md"
+                      className="rounded-xl w-full h-auto object-cover shadow-xs"
                     />
                   </div>
                 )}
@@ -196,7 +202,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs"
                 onClick={closeLightbox}
                 role="dialog"
                 aria-modal="true"
@@ -205,7 +211,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                 <button
                   type="button"
                   onClick={closeLightbox}
-                  className="absolute top-4 right-4 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-white"
+                  className="absolute top-4 right-4 z-10 rounded-full bg-black/60 p-2.5 text-white hover:bg-black/80 focus:outline-none"
                   aria-label="Close image preview"
                 >
                   <X className="size-5" />

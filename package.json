@@ -1,6 +1,7 @@
 {
-  "name": "my-app",
+  "name": "rone-portfolio",
   "version": "0.1.0",
+  "author": "Rone <me@rone.eu.cc>",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

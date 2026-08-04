@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
@@ -17,17 +18,17 @@ const techStack = [
 
 const StackLoop = () => {
   return (
-    <div className="rounded-xs overflow-hidden py-1 md:max-w-[400px] max-w-[320px] mx-auto ">
-      <Marquee delay={5} speed={30}>
-        <div className="flex-center gap-3 mx-3">
+    <div className="overflow-hidden py-2 w-full max-w-[280px] sm:max-w-[360px] md:max-w-[420px] mx-auto">
+      <Marquee delay={0} speed={30} gradient={false}>
+        <div className="flex items-center gap-4 sm:gap-6 mx-2 sm:mx-3">
           {techStack.map((tech) => (
-            <div key={tech.name}>
+            <div key={tech.name} className="shrink-0">
               <Image
                 src={tech.src}
                 alt={`${tech.name} logo`}
-                width={40}
-                height={40}
-                className="object-contain"
+                width={36}
+                height={36}
+                className="object-contain w-8 h-8 sm:w-9 sm:h-9 opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}

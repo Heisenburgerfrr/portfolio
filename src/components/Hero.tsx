@@ -12,10 +12,10 @@ const Hero = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div>
+    <div className="w-full">
       <section
         ref={ref}
-        className="grid justify-center items-center text-center py-24 mt-6"
+        className="flex flex-col justify-center items-center text-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 mt-2 sm:mt-6"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,10 +25,10 @@ const Hero = () => {
         >
           <Image
             src="/img/profile-image.jpg"
-            className="rounded-full mt-6 object-cover"
-            alt="Adebanjo Stephen Profile Photo"
-            width={114}
-            height={114}
+            className="rounded-full object-cover ring-4 ring-gray-100/90 shadow-sm transition-transform hover:scale-105 duration-300 w-24 h-24 sm:w-28 sm:h-28"
+            alt="Rone Profile Photo"
+            width={112}
+            height={112}
             priority
           />
         </motion.div>
@@ -37,16 +37,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="max-w-xl mx-auto"
         >
-          <h1 className="font-bold md:leading-14 leading-8 md:text-[56px] text-[28px] mt-6">
-            Hi, I&apos;m Adebanjo Stephen.
-            <br /> Software Engineer
-          </h1>
-          <p className="text-gray-600 mt-4 flex-wrap md:px-0 px-4 text-lg">
-            Relentless self-taught developer, passionate about crafting Next.js
-            solutions,
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl leading-tight mt-5 tracking-tight text-gray-900">
+            Hi, I&apos;m Rone.
             <br />
-            and driven to grow in tech.
+            <span className="text-gray-800 font-semibold">
+              Student &amp; Indie Developer
+            </span>
+          </h1>
+          <p className="text-gray-600 mt-3.5 px-2 sm:px-0 text-sm sm:text-base leading-relaxed max-w-md mx-auto">
+            A student building independent web &amp; software projects — mostly
+            self-taught, learning by shipping.
           </p>
         </motion.div>
 
@@ -54,24 +56,26 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="flex items-center justify-center mt-6 gap-2 flex-wrap"
+          className="flex flex-col xs:flex-row sm:flex-row items-center justify-center mt-6 gap-3 w-full sm:w-auto px-4"
         >
           <Button
             asChild
-            className="!bg-black/90 text-white !cursor-pointer !py-4 !px-6 hover:!bg-black/82"
+            className="!bg-black/90 text-white !cursor-pointer py-3.5 sm:py-4 px-6 hover:!bg-black/82 w-full xs:w-auto sm:w-auto text-sm"
           >
-            <a href="#contact">Hire Me!</a>
+            <a href="#contact">Get in touch</a>
           </Button>
-          <div className="border flex-center bg-[#E1F9DC] text-[#178D00] px-4 py-1 rounded-full text-sm font-medium">
-            <Dot className="size-6" />
-            <span>Available for collaborations</span>
+          <div className="border flex items-center justify-center bg-[#E1F9DC] text-[#178D00] px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium w-full xs:w-auto sm:w-auto">
+            <Dot className="size-5 shrink-0" />
+            <span>Building independent projects</span>
           </div>
         </motion.div>
       </section>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        className="px-4"
       >
         <StackLoop />
       </motion.div>

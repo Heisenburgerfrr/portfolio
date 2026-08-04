@@ -12,32 +12,27 @@ const geistSans = Geist({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://myportfoliome.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rone.eu.cc";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Adebanjo Stephen | Software Engineer",
+  title: "Rone | Student & Indie Developer",
   description:
-    "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, and Full-stack development with Next.js, JavaScript, and TypeScript.",
+    "A student building independent web and software projects — streaming aggregators, automation tools, and short-form content pipelines — mostly self-taught, learning by shipping.",
   keywords: [
-    "Self-taught",
-    "Software Engineer",
+    "Rone",
+    "Student",
+    "Indie Developer",
     "Web Development",
-    "Entrepreneur",
-    "Backend",
-    "Full-stack",
-    "Frontend developer",
+    "Software Engineer",
+    "Cinepeak",
+    "Longly",
     "Next.js",
-    "JavaScript",
     "TypeScript",
-    "Tech innovation",
-    "Community building",
-    "Adebanjo Stephen",
   ],
-  authors: [{ name: "Adebanjo Stephen" }],
-  creator: "Adebanjo Stephen",
-  publisher: "Adebanjo Stephen",
+  authors: [{ name: "Rone" }],
+  creator: "Rone",
+  publisher: "Rone",
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
     icon: "/favicon.ico",
@@ -48,25 +43,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Adebanjo Stephen Portfolio",
-    title: "Adebanjo Stephen | Software Engineer",
+    siteName: "Rone Portfolio",
+    title: "Rone | Student & Indie Developer",
     description:
-      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, and Full-stack development with Next.js, JavaScript, and TypeScript.",
+      "A student building independent web and software projects — streaming aggregators, automation tools, and short-form content pipelines — mostly self-taught, learning by shipping.",
     images: [
       {
         url: `${siteUrl}/img/profile-pic.jpg`,
         width: 1200,
         height: 630,
-        alt: "Adebanjo Stephen | Software Engineer",
+        alt: "Rone | Student & Indie Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adebanjo Stephen | Software Engineer",
+    title: "Rone | Student & Indie Developer",
     description:
-      "Self-taught software engineer and entrepreneur, specializing in Frontend, Backend, and Full-stack development with Next.js, JavaScript, and TypeScript.",
-    creator: "@AdebanjoSt63916",
+      "A student building independent web and software projects — streaming aggregators, automation tools, and short-form content pipelines — mostly self-taught, learning by shipping.",
+    creator: "@RoneReji",
     images: [`${siteUrl}/img/profile-pic.jpg`],
   },
   robots: {
@@ -84,7 +79,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Adebanjo Stephen Olumide",
+    title: "Rone",
   },
 };
 
@@ -96,19 +91,20 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Adebanjo Stephen",
+    name: "Rone",
     url: siteUrl,
     image: `${siteUrl}/img/profile-pic.jpg`,
-    jobTitle: "Software Engineer",
+    jobTitle: "Student & Indie Developer",
+    email: "mailto:me@rone.eu.cc",
     sameAs: [
-      "https://github.com/SteeveSticks",
-      "https://x.com/AdebanjoSt63916",
-      "https://www.linkedin.com/in/stephen-adebanjo-82a6ba359/",
+      "https://github.com/Heisenburgerfrr",
+      "https://x.com/RoneReji",
+      "https://www.instagram.com/heisenburgerfrr/",
     ],
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
@@ -117,8 +113,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} antialiased`}>
-        <div className="font-sans border-b border-l border-r max-w-3xl mx-auto">
+      <body
+        className={`${geistSans.variable} antialiased bg-gray-50/30 text-gray-900 selection:bg-black selection:text-white`}
+      >
+        <div className="font-sans min-h-screen max-w-3xl mx-auto border-x border-gray-200/60 bg-white shadow-xs">
           <Navbar />
           {children}
           <Footer />

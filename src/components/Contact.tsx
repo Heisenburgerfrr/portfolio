@@ -5,6 +5,8 @@ import { Button } from "./ui/button";
 import { toast } from "sonner";
 import { motion, useInView } from "framer-motion";
 
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "me@rone.eu.cc";
+
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
@@ -47,10 +49,16 @@ const Contact = () => {
         <h2 className="text-black font-bold text-3xl">Get in touch</h2>
 
         <p className="prose mt-2 text-gray-600">
-          Whether it&apos;s a freelance gig, a collaboration, or a full-time
-          opportunity, or want to say hi? I&apos;m always excited to connect
-          with people who love building meaningful things. Drop a message, and
-          I&apos;ll get back to you as soon as I can!
+          Whether it&apos;s a project collaboration, feedback, or just to say
+          hi, I&apos;m always excited to connect with people who love building
+          interesting things. Drop a message or reach out directly at{" "}
+          <a
+            href={`mailto:${contactEmail}`}
+            className="underline font-semibold"
+          >
+            {contactEmail}
+          </a>
+          !
         </p>
       </motion.div>
 
@@ -87,7 +95,7 @@ const Contact = () => {
 
             <div className="mt-2">
               <textarea
-                placeholder="Hi Stephen, are you available for..."
+                placeholder="Hi Rone, love your work on..."
                 aria-label="Your Message"
                 id="message"
                 value={form.message}

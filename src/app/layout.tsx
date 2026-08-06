@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { getSiteUrl } from "@/lib/utils";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,6 +20,7 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Rone Reji | Student & Indie Developer",
+  applicationName: "Rone Reji",
   description:
     "Rone Reji is a student & indie developer building independent web and software projects — streaming aggregators, automation tools, and content pipelines.",
   keywords: [
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "Rone Reji Portfolio",
+    siteName: "Rone Reji",
     title: "Rone Reji | Student & Indie Developer",
     description:
       "Rone Reji is a student & indie developer building independent web and software projects — streaming aggregators, automation tools, and content pipelines.",
@@ -96,58 +99,65 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const personJsonLd = {
+  const jsonLdGraph = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Rone Reji",
-    alternateName: ["Rone", "heisenburgerfrr", "rshellr", "quavity"],
-    url: siteUrl,
-    image: `${siteUrl}/img/profile-pic.jpg`,
-    jobTitle: "Student & Indie Developer",
-    description:
-      "Student and indie developer building independent web and software projects.",
-    email: "mailto:me@rone.cc.cd",
-    sameAs: [
-      "https://github.com/Heisenburgerfrr",
-      "https://x.com/RoneReji",
-      "https://www.instagram.com/heisenburgerfrr/",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Rone Reji",
+        alternateName: ["Rone", "Rone Reji Portfolio", "heisenburgerfrr"],
+        publisher: {
+          "@id": `${siteUrl}/#person`,
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Rone Reji",
+        alternateName: ["Rone", "heisenburgerfrr", "rshellr", "quavity"],
+        url: siteUrl,
+        image: `${siteUrl}/img/profile-pic.jpg`,
+        jobTitle: "Student & Indie Developer",
+        description:
+          "Student and indie developer building independent web and software projects.",
+        email: "mailto:me@rone.cc.cd",
+        sameAs: [
+          "https://github.com/Heisenburgerfrr",
+          "https://x.com/RoneReji",
+          "https://www.instagram.com/heisenburgerfrr/",
+        ],
+      },
     ],
   };
 
-  const websiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Rone Reji Portfolio",
-    alternateName: "Rone Reji",
-    url: siteUrl,
-  };
-
   return (
-    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(jsonLdGraph).replace(/</g, "\\u003c"),
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} antialiased bg-gray-50/30 text-gray-900 selection:bg-black selection:text-white`}
+        className={`${geistSans.variable} antialiased bg-gray-50/30 text-gray-900 dark:bg-[#181818] dark:text-[#ededed] selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300`}
       >
-        <div className="font-sans min-h-screen max-w-3xl mx-auto border-x border-gray-200/60 bg-white shadow-xs">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-        </div>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <div className="font-sans min-h-screen max-w-3xl mx-auto border-x border-gray-200/60 dark:border-[#262626] bg-white dark:bg-[#181818] shadow-xs transition-colors duration-300">
+            <Navbar />
+            {children}
+            <Footer />
+            <Analytics />
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

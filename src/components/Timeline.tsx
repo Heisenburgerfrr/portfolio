@@ -13,7 +13,7 @@ const timelineItems = [
     description: "Streaming Aggregator & Bot-blocking Middleware",
     tags: ["Next.js", "TMDB API", "Middleware"],
     link: "/project/cinepeak",
-    statusColor: "bg-blue-50 text-blue-600 border-blue-100",
+    statusColor: "bg-blue-50 text-blue-600 border-blue-100 dark:bg-blue-950/40 dark:text-blue-400 dark:border-blue-800/50",
   },
   {
     title: "Longly",
@@ -22,7 +22,7 @@ const timelineItems = [
     description: "Satirical Link Expander & Bijective Mnemonic Encoder",
     tags: ["React", "Algorithms", "TypeScript"],
     link: "/project/longly",
-    statusColor: "bg-purple-50 text-purple-600 border-purple-100",
+    statusColor: "bg-purple-50 text-purple-600 border-purple-100 dark:bg-purple-950/40 dark:text-purple-400 dark:border-purple-800/50",
   },
   {
     title: "Indie Pipelines",
@@ -31,7 +31,7 @@ const timelineItems = [
     description: "Short-form Content & Workflow Automation Tools",
     tags: ["Python", "Automation", "Node.js"],
     link: "/#projects",
-    statusColor: "bg-emerald-50 text-emerald-600 border-emerald-100",
+    statusColor: "bg-emerald-50 text-emerald-600 border-emerald-100 dark:bg-[#143416] dark:text-[#4ade80] dark:border-[#1e4d21]",
   },
 ];
 
@@ -41,7 +41,7 @@ const Timeline = () => {
 
   return (
     <section id="timeline" ref={ref} className="px-4 sm:px-8 md:px-12">
-      <hr className="mt-20 border-gray-100" />
+      <hr className="mt-20 border-gray-100 dark:border-[#262626] transition-colors" />
 
       <div className="mt-14">
         <motion.div
@@ -50,10 +50,10 @@ const Timeline = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <div className="text-center mx-auto mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-[#ededed]">
               Build Timeline
             </h2>
-            <p className="text-sm sm:text-base text-gray-600 mt-1.5">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-[#999999] mt-1.5">
               Independent projects and software pipelines shipped in the open.
             </p>
           </div>
@@ -64,16 +64,16 @@ const Timeline = () => {
               return (
                 <div
                   key={item.title}
-                  className="group relative p-5 rounded-2xl border border-gray-200/80 bg-white/60 hover:bg-gray-50/80 hover:border-gray-300 transition-colors duration-300 shadow-xs"
+                  className="group relative p-5 rounded-2xl border border-gray-200/80 dark:border-[#2b2b2b] bg-white/60 dark:bg-[#1f1f1f] hover:bg-gray-50/80 dark:hover:bg-[#242424] hover:border-gray-300 dark:hover:border-[#383838] transition-colors duration-300 shadow-xs"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-start sm:items-center gap-4">
-                      <div className="p-3 rounded-xl bg-gray-100/80 text-gray-800 group-hover:bg-black group-hover:text-white transition-colors duration-300 shrink-0">
+                      <div className="p-3 rounded-xl bg-gray-100/80 dark:bg-[#2a2a2a] text-gray-800 dark:text-[#ededed] group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-colors duration-300 shrink-0">
                         <Icon className="size-5" />
                       </div>
                       <div>
                         <div className="flex items-center gap-2.5 flex-wrap">
-                          <h3 className="text-xl sm:text-[22px] font-bold tracking-tight text-gray-900 group-hover:text-black">
+                          <h3 className="text-xl sm:text-[22px] font-bold tracking-tight text-gray-900 dark:text-[#ededed] group-hover:text-black dark:group-hover:text-white">
                             {item.title}
                           </h3>
                           <span
@@ -82,7 +82,7 @@ const Timeline = () => {
                             {item.category}
                           </span>
                         </div>
-                        <p className="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-[#a1a1aa] mt-1 leading-relaxed">
                           {item.description}
                         </p>
                       </div>
@@ -93,7 +93,7 @@ const Timeline = () => {
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs sm:text-sm px-2.5 py-0.5 rounded-md bg-gray-100 text-gray-600 font-medium"
+                            className="text-xs sm:text-sm px-2.5 py-0.5 rounded-md bg-gray-100 dark:bg-[#2a2a2a] text-gray-600 dark:text-[#a1a1aa] font-medium"
                           >
                             {tag}
                           </span>
@@ -101,7 +101,7 @@ const Timeline = () => {
                       </div>
                       <Link
                         href={item.link}
-                        className="p-2 rounded-lg text-gray-400 hover:text-black hover:bg-gray-200/60 transition-colors"
+                        className="p-2 rounded-lg text-gray-400 dark:text-[#a1a1aa] hover:text-black dark:hover:text-white hover:bg-gray-200/60 dark:hover:bg-[#2a2a2a] transition-colors"
                         aria-label={`View ${item.title}`}
                       >
                         <ArrowUpRight className="size-5" />
@@ -113,16 +113,16 @@ const Timeline = () => {
             })}
           </div>
 
-          <div className="mt-8 p-5 sm:p-6 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50/50 to-indigo-50/30">
+          <div className="mt-8 p-5 sm:p-6 rounded-2xl border border-blue-100 dark:border-blue-900/40 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 dark:from-[#1b1b1e] dark:to-[#162032] transition-colors">
             <div className="flex items-start gap-3.5">
-              <div className="p-2.5 rounded-xl bg-blue-500 text-white shrink-0 mt-0.5">
+              <div className="p-2.5 rounded-xl bg-blue-500 dark:bg-blue-600 text-white shrink-0 mt-0.5">
                 <Star className="size-4" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 text-base sm:text-lg">
+                <h4 className="font-semibold text-gray-900 dark:text-[#ededed] text-base sm:text-lg">
                   Indie Developer Philosophy
                 </h4>
-                <p className="text-sm sm:text-base text-gray-600 mt-1 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-[#a1a1aa] mt-1 leading-relaxed">
                   I learn by breaking things first and figuring them out after.
                   Building a streaming platform from scratch, automating a
                   content pipeline, messing with a custom ROM just to see what
@@ -136,7 +136,7 @@ const Timeline = () => {
         </motion.div>
       </div>
 
-      <hr className="mt-14 border-gray-100" />
+      <hr className="mt-14 border-gray-100 dark:border-[#262626] transition-colors" />
     </section>
   );
 };

@@ -49,17 +49,17 @@ const Contact = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-[#ededed]">
           Get in touch
         </h2>
 
-        <p className="mt-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl">
+        <p className="mt-3 text-base sm:text-lg text-gray-700 dark:text-[#a1a1aa] leading-relaxed max-w-xl">
           Whether it&apos;s a project collaboration, feedback, or just to say
           hi, I&apos;m always excited to connect with people who love building
           interesting things. Drop a message or reach out directly at{" "}
           <a
             href={`mailto:${contactEmail}`}
-            className="underline font-semibold text-gray-900 hover:text-black"
+            className="underline font-semibold text-gray-900 dark:text-[#ededed] hover:text-black dark:hover:text-white"
           >
             {contactEmail}
           </a>
@@ -82,7 +82,7 @@ const Contact = () => {
               aria-label="Full Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full border border-gray-200 py-4 px-6 rounded-xl bg-gray-50 focus:bg-white focus:outline-black text-base transition-colors flex-1"
+              className="w-full border border-gray-200 dark:border-[#2b2b2b] py-4 px-6 rounded-xl bg-gray-50 dark:bg-[#1f1f1f] text-gray-900 dark:text-[#ededed] placeholder:text-gray-400 dark:placeholder:text-[#666666] focus:bg-white dark:focus:bg-[#141414] focus:outline-black dark:focus:outline-white/40 text-base transition-colors flex-1"
               required
             />
             <input
@@ -92,7 +92,7 @@ const Contact = () => {
               aria-label="Email Address"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full border border-gray-200 py-4 px-6 rounded-xl bg-gray-50 focus:bg-white focus:outline-black text-base transition-colors flex-1"
+              className="w-full border border-gray-200 dark:border-[#2b2b2b] py-4 px-6 rounded-xl bg-gray-50 dark:bg-[#1f1f1f] text-gray-900 dark:text-[#ededed] placeholder:text-gray-400 dark:placeholder:text-[#666666] focus:bg-white dark:focus:bg-[#141414] focus:outline-black dark:focus:outline-white/40 text-base transition-colors flex-1"
               required
             />
           </div>
@@ -104,14 +104,14 @@ const Contact = () => {
               id="message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full resize-none h-40 border border-gray-200 py-4 px-6 rounded-xl bg-gray-50 focus:bg-white focus:outline-black text-base transition-colors"
+              className="w-full resize-none h-40 border border-gray-200 dark:border-[#2b2b2b] py-4 px-6 rounded-xl bg-gray-50 dark:bg-[#1f1f1f] text-gray-900 dark:text-[#ededed] placeholder:text-gray-400 dark:placeholder:text-[#666666] focus:bg-white dark:focus:bg-[#141414] focus:outline-black dark:focus:outline-white/40 text-base transition-colors"
               required
             ></textarea>
           </div>
 
           <div className="pt-2">
             <Button
-              className="w-full border text-center py-5 min-h-[56px] cursor-pointer bg-black/90 text-white text-base sm:text-lg font-semibold hover:!bg-black rounded-xl transition-all shadow-xs"
+              className="w-full border border-transparent text-center py-5 min-h-[56px] cursor-pointer bg-[#18181b] text-white dark:bg-[#ededed] dark:text-[#181818] text-base sm:text-lg font-semibold hover:!bg-[#27272a] dark:hover:!bg-white rounded-xl transition-all shadow-sm"
               type="submit"
               disabled={loading}
             >

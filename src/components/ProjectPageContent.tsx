@@ -57,32 +57,32 @@ export function ProjectPageContent({ project }: { project: Project }) {
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <div>
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-gray-900">
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-gray-900 dark:text-[#ededed]">
               {project.name}
             </h1>
-            <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-2 leading-relaxed">
+            <p className="text-gray-600 dark:text-[#999999] text-sm sm:text-base md:text-lg mt-2 leading-relaxed">
               {project.show}
             </p>
           </div>
 
-          <div className="mt-6 sm:mt-8 rounded-2xl border border-gray-200/80 p-4 sm:p-6 bg-gray-50/50">
-            <h2 className="font-bold text-base sm:text-lg text-gray-900">
+          <div className="mt-6 sm:mt-8 rounded-2xl border border-gray-200/80 dark:border-[#2b2b2b] p-4 sm:p-6 bg-gray-50/50 dark:bg-[#1a1a1a]">
+            <h2 className="font-bold text-base sm:text-lg text-gray-900 dark:text-[#ededed]">
               Description
             </h2>
-            <p className="text-sm text-gray-700 mt-2 leading-relaxed">
+            <p className="text-sm text-gray-700 dark:text-[#a1a1aa] mt-2 leading-relaxed">
               {project.desc}
             </p>
 
-            <hr className="my-6 border-gray-200" />
+            <hr className="my-6 border-gray-200 dark:border-[#2b2b2b]" />
 
             <div>
-              <h2 className="font-bold text-base sm:text-lg text-gray-900">
+              <h2 className="font-bold text-base sm:text-lg text-gray-900 dark:text-[#ededed]">
                 Technologies
               </h2>
               <ul className="flex flex-wrap gap-2 mt-3">
                 {project.lang.map((tech) => (
                   <li key={tech}>
-                    <span className="py-1 px-2.5 bg-[#E1F9DC] text-[#178D00] text-xs sm:text-sm font-medium rounded-full inline-block">
+                    <span className="py-1 px-2.5 bg-[#E1F9DC] text-[#178D00] dark:bg-[#143416] dark:text-[#4ade80] dark:border dark:border-[#1e4d21] text-xs sm:text-sm font-medium rounded-full inline-block">
                       {tech}
                     </span>
                   </li>
@@ -94,7 +94,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
           <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8">
             <Button
               asChild
-              className="!py-4 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl"
+              className="!py-4 hover:!bg-[#27272a] dark:hover:!bg-white !bg-[#18181b] dark:!bg-[#ededed] text-white dark:text-[#181818] !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl transition-all shadow-sm"
             >
               <a
                 target="_blank"
@@ -115,7 +115,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
 
             <Button
               asChild
-              className="!py-4 hover:!bg-black/82 !bg-black/90 text-white !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl"
+              className="!py-4 hover:!bg-[#27272a] dark:hover:!bg-white !bg-[#18181b] dark:!bg-[#ededed] text-white dark:text-[#181818] !cursor-pointer w-full sm:w-auto min-h-[50px] text-base font-semibold rounded-xl transition-all shadow-sm"
             >
               <a
                 target="_blank"
@@ -143,7 +143,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
               onKeyDown={(e) =>
                 e.key === "Enter" && setLightboxSrc(`/img/${project.img}`)
               }
-              className="bg-gray-50/85 border border-gray-200/80 p-2 sm:p-4 rounded-2xl cursor-pointer hover:shadow-md transition-shadow"
+              className="bg-gray-50/85 dark:bg-[#141414] border border-gray-200/80 dark:border-[#2b2b2b] p-2 sm:p-4 rounded-2xl cursor-pointer hover:shadow-md dark:hover:border-[#383838] transition-all"
               aria-label="View image larger"
             >
               <Image
@@ -166,7 +166,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                       e.key === "Enter" &&
                       setLightboxSrc(`/img/${project.img2}`)
                     }
-                    className="bg-gray-50/85 border border-gray-200/80 p-2 sm:p-3 rounded-2xl cursor-pointer hover:shadow-md transition-shadow"
+                    className="bg-gray-50/85 dark:bg-[#141414] border border-gray-200/80 dark:border-[#2b2b2b] p-2 sm:p-3 rounded-2xl cursor-pointer hover:shadow-md dark:hover:border-[#383838] transition-all"
                     aria-label="View image larger"
                   >
                     <Image
@@ -187,7 +187,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                       e.key === "Enter" &&
                       setLightboxSrc(`/img/${project.img3}`)
                     }
-                    className="bg-gray-50/85 border border-gray-200/80 p-2 sm:p-3 rounded-2xl cursor-pointer hover:shadow-md transition-shadow"
+                    className="bg-gray-50/85 dark:bg-[#141414] border border-gray-200/80 dark:border-[#2b2b2b] p-2 sm:p-3 rounded-2xl cursor-pointer hover:shadow-md dark:hover:border-[#383838] transition-all"
                     aria-label="View image larger"
                   >
                     <Image
@@ -211,7 +211,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs"
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs"
                 onClick={closeLightbox}
                 role="dialog"
                 aria-modal="true"
@@ -220,7 +220,7 @@ export function ProjectPageContent({ project }: { project: Project }) {
                 <button
                   type="button"
                   onClick={closeLightbox}
-                  className="absolute top-4 right-4 z-10 rounded-full bg-black/60 p-2.5 text-white hover:bg-black/80 focus:outline-none"
+                  className="absolute top-4 right-4 z-10 rounded-full bg-black/60 dark:bg-zinc-800/80 p-2.5 text-white hover:bg-black/80 dark:hover:bg-zinc-700 focus:outline-none cursor-pointer"
                   aria-label="Close image preview"
                 >
                   <X className="size-5" />

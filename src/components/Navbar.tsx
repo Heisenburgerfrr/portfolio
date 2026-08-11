@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -14,13 +14,15 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-const Navbar = () => {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+const emptySubscribe = () => () => {};
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+const Navbar = () => {
+  const mounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <header className="py-4">

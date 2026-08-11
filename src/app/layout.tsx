@@ -152,7 +152,9 @@ export default function RootLayout({
         >
           <div className="font-sans min-h-screen max-w-3xl mx-auto border-x border-gray-200/60 dark:border-[#262626] bg-white dark:bg-[#181818] shadow-xs transition-colors duration-300">
             <Navbar />
-            {children}
+            <main id="main-content">
+              {children}
+            </main>
             <Footer />
             <Analytics />
           </div>

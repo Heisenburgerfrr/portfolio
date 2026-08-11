@@ -44,6 +44,7 @@ export async function generateMetadata({
       canonical: `${baseUrl}/project/${project.slug}`,
     },
     openGraph: {
+      siteName: "Rone Reji",
       title: `${project.name} | Rone Reji`,
       description: project.desc,
       type: "article",

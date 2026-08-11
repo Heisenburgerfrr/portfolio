@@ -18,8 +18,8 @@ const Hero = () => {
         className="flex flex-col justify-center items-center text-center py-20 sm:py-24 md:py-28 px-4 sm:px-6 mt-4 sm:mt-6"
       >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="inline-flex items-center justify-center"
         >
@@ -30,13 +30,14 @@ const Hero = () => {
             width={128}
             height={128}
             priority
+            fetchPriority="high"
           />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           className="max-w-2xl mx-auto"
         >
           <h1 className="font-bold text-3xl sm:text-4xl md:text-[46px] leading-tight sm:leading-snug mt-6 tracking-tight text-gray-900 dark:text-[#ededed]">

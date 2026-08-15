@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getSiteUrl(): string {
   const envUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!envUrl) return "https://rone.cc.cd";
+  if (!envUrl) return "https://ronee.me";
   if (envUrl.startsWith("http://") || envUrl.startsWith("https://")) {
     return envUrl;
   }

@@ -1,7 +1,7 @@
 {
   "name": "rone-portfolio",
   "version": "0.1.0",
-  "author": "Rone <me@rone.cc.cd>",
+  "author": "Rone <hi@ronee.me>",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

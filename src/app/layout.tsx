@@ -122,7 +122,7 @@ export default function RootLayout({
         jobTitle: "Student & Indie Developer",
         description:
           "Student and indie developer building independent web and software projects.",
-        email: "mailto:me@rone.cc.cd",
+        email: "mailto:hi@ronee.me",
         sameAs: [
           "https://github.com/Heisenburgerfrr",
           "https://x.com/RoneReji",

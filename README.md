@@ -114,4 +114,4 @@ Designed and built for **Rone** (Student & Indie Developer) to showcase independ
 - **Rone** — Student & Indie Developer
 - **GitHub**: [@Heisenburgerfrr](https://github.com/Heisenburgerfrr)
 - **X**: [@RoneReji](https://x.com/RoneReji)
-- **Email**: [me@rone.cc.cd](mailto:me@rone.cc.cd)
+- **Email**: [hi@ronee.me](mailto:hi@ronee.me)

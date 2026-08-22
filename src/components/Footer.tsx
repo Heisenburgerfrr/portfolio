@@ -12,7 +12,7 @@ const Footer = () => {
 
       <div className="mt-6 text-center">
         <span className="text-gray-500 dark:text-zinc-400 text-xs sm:text-sm tracking-normal">
-          © 2025 Rone Reji. All rights reserved.
+          © 2026 Rone Reji. All rights reserved.
         </span>
 
         <div className="flex items-center justify-center gap-5 sm:gap-6 mt-3">
